@@ -1,0 +1,148 @@
+/* REGLAS EXACTAS EARTHDAILY HERO */
+#hero.hero-earthdaily {
+  position: relative !important;
+  min-height: 100vh !important;
+  height: 100vh !important;
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  overflow: hidden !important;
+  background-color: #212529 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.hero-earthdaily-bg {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 1 !important;
+  overflow: hidden !important;
+  background-color: #212529 !important;
+}
+
+.earthdaily-bg-img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center bottom !important;
+  display: block !important;
+}
+
+.earthdaily-bg-overlay {
+  position: absolute !important;
+  inset: 0 !important;
+  background: linear-gradient(
+    180deg,
+    rgba(33, 37, 41, 0.94) 0%,
+    rgba(33, 37, 41, 0.72) 22%,
+    rgba(33, 37, 41, 0.20) 45%,
+    rgba(33, 37, 41, 0.0) 65%
+  ) !important;
+  pointer-events: none !important;
+}
+
+.hero-center-content {
+  position: relative !important;
+  z-index: 5 !important;
+  width: 100% !important;
+  max-width: 1020px !important;
+  margin: 0 auto !important;
+  padding-top: 130px !important;
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+  text-align: center !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+
+.earthdaily-title {
+  font-family: var(--font-serif) !important;
+  font-size: clamp(2.5rem, 5.2vw, 4.3rem) !important;
+  font-weight: 400 !important;
+  color: #FFFFFF !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.01em !important;
+  margin-bottom: 1.25rem !important;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.5) !important;
+}
+
+.earthdaily-sub {
+  font-family: var(--font-sans) !important;
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem) !important;
+  color: rgba(255, 255, 255, 0.88) !important;
+  font-weight: 300 !important;
+  line-height: 1.6 !important;
+  max-width: 760px !important;
+  margin: 0 auto 2.25rem auto !important;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.6) !important;
+}
+
+.earthdaily-ctas {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 1.1rem !important;
+  flex-wrap: wrap !important;
+}
+
+.btn-earthdaily-white {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.6rem !important;
+  background: #FFFFFF !important;
+  color: #111827 !important;
+  font-family: var(--font-sans) !important;
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  padding: 0.85rem 1.75rem !important;
+  border-radius: 6px !important;
+  text-decoration: none !important;
+  transition: all 0.25s ease !important;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25) !important;
+}
+
+.btn-earthdaily-white:hover {
+  background: #CBAB58 !important;
+  color: #070B11 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 24px rgba(203, 171, 88, 0.35) !important;
+}
+
+.btn-earthdaily-dark {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.6rem !important;
+  background: rgba(14, 28, 48, 0.85) !important;
+  color: #FFFFFF !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  font-family: var(--font-sans) !important;
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  padding: 0.85rem 1.75rem !important;
+  border-radius: 6px !important;
+  text-decoration: none !important;
+  backdrop-filter: blur(10px) !important;
+  transition: all 0.25s ease !important;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25) !important;
+}
+
+.btn-earthdaily-dark:hover {
+  background: rgba(20, 40, 70, 0.95) !important;
+  border-color: #CBAB58 !important;
+  color: #CBAB58 !important;
+  transform: translateY(-2px) !important;
+}
+
+@media (max-width: 768px) {
+  .hero-center-content {
+    padding-top: 105px !important;
+  }
+  .earthdaily-title {
+    font-size: 2.1rem !important;
+  }
+}

@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgMale" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0E2338"/>
+      <stop offset="100%" stop-color="#060F1C"/>
+    </linearGradient>
+    <linearGradient id="helmetGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFD15C"/>
+      <stop offset="100%" stop-color="#CBAB58"/>
+    </linearGradient>
+    <linearGradient id="vestGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1565C0"/>
+      <stop offset="100%" stop-color="#0D47A1"/>
+    </linearGradient>
+  </defs>
+  <!-- Background Circle -->
+  <circle cx="60" cy="60" r="58" fill="url(#bgMale)" stroke="#CBAB58" stroke-width="2" stroke-opacity="0.4"/>
+  
+  <!-- Shoulders & Engineering Vest -->
+  <path d="M26 112 C26 90, 42 82, 60 82 C78 82, 94 90, 94 112 Z" fill="url(#vestGrad)"/>
+  <!-- Vest Reflective Stripes -->
+  <path d="M42 84 L45 112 M78 84 L75 112" stroke="#CBAB58" stroke-width="3" stroke-linecap="round"/>
+  <!-- Tie / Collar -->
+  <polygon points="60,86 54,98 60,110 66,98" fill="#CBAB58"/>
+  <polygon points="53,82 60,88 67,82 60,85" fill="#FFFFFF"/>
+
+  <!-- Neck -->
+  <rect x="52" y="70" width="16" height="15" rx="3" fill="#E8B382"/>
+
+  <!-- Head / Face -->
+  <ellipse cx="60" cy="56" rx="17" ry="20" fill="#F7CA9F"/>
+  <!-- Ears -->
+  <circle cx="43" cy="56" r="4.5" fill="#E8B382"/>
+  <circle cx="77" cy="56" r="4.5" fill="#E8B382"/>
+  
+  <!-- Eyes & Eyebrows -->
+  <circle cx="53" cy="55" r="2.2" fill="#1A202C"/>
+  <circle cx="67" cy="55" r="2.2" fill="#1A202C"/>
+  <path d="M49 50 Q53 48 57 50" stroke="#4A5568" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+  <path d="M63 50 Q67 48 71 50" stroke="#4A5568" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+  
+  <!-- Nose & Smile -->
+  <path d="M60 54 L58 60 L62 60" stroke="#D69E6E" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+  <path d="M54 65 Q60 69 66 65" stroke="#B7791F" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+
+  <!-- Hair sideburns -->
+  <path d="M43 47 C43 53, 45 57, 46 57 M77 47 C77 53, 75 57, 74 57" stroke="#2D3748" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Engineer Hard Hat (Casco) -->
+  <path d="M38 42 C38 25, 82 25, 82 42 Z" fill="url(#helmetGrad)"/>
+  <!-- Helmet Brim -->
+  <path d="M33 42 Q60 40 87 42 C87 45, 33 45, 33 42 Z" fill="#B89745"/>
+  <!-- Helmet Crest/Ridge -->
+  <rect x="57" y="26" width="6" height="15" rx="2" fill="#FFE58F"/>
+</svg>

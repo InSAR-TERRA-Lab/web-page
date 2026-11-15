@@ -1,0 +1,1302 @@
+<!DOCTYPE html>
+<html lang="es" id="html-root">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="InSAR-TERRA Lab — Laboratorio de monitoreo de infraestructura crítica por radar de apertura sintética interferométrica. Precisión milimétrica. Escala global.">
+    <title>InSAR-TERRA Lab — Monitoreo de Infraestructura Crítica</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ======================== HEADER ======================== -->
+<header id="main-header">
+    <div class="header-brand-group">
+        <img src="logos/instituciones/FI_UNAM.png" alt="Facultad de Ingeniería UNAM" class="header-fi-logo">
+        <a href="#hero" class="logo">
+            <img src="logos/insar-terra-white.png" alt="InSAR-TERRA Lab" class="header-main-logo">
+        </a>
+    </div>
+
+    <nav id="main-nav">
+        <a href="#quienes-somos" data-es="Quiénes Somos" data-en="About Us">Quiénes Somos</a>
+        <div class="nav-item-dropdown">
+            <a href="servicios.html" class="nav-link-dropdown" data-es="Servicios ▾" data-en="Services ▾">Servicios ▾</a>
+            <div class="dropdown-menu">
+                <a href="servicios.html#insar-interferometria" data-es="Interferometría Radar Satelital (InSAR)" data-en="Satellite Radar Interferometry (InSAR)">Interferometría Radar Satelital (InSAR)</a>
+                <a href="servicios.html#drones-lidar" data-es="Fotogrametría con Drones y Escáner LiDAR" data-en="Drone Photogrammetry & LiDAR Scanning">Fotogrametría con Drones y Escáner LiDAR</a>
+                <a href="servicios.html#geofisica-gpr" data-es="Geofísica Aplicada (GPR y Tomografía Eléctrica)" data-en="Applied Geophysics (GPR & Electrical Tomography)">Geofísica Aplicada (GPR y Tomografía Eléctrica)</a>
+                <a href="servicios.html#infraestructura-critica" data-es="Monitoreo de Infraestructura Crítica y Presas" data-en="Critical Infrastructure & Dam Monitoring">Monitoreo de Infraestructura Crítica y Presas</a>
+                <a href="servicios.html#supercomputo-analitica" data-es="Supercómputo y Analítica Geoespacial Masiva" data-en="Supercomputing & Big Geospatial Analytics">Supercómputo y Analítica Geoespacial Masiva</a>
+            </div>
+        </div>
+        <a href="#proyectos" data-es="Proyectos" data-en="Projects">Proyectos</a>
+        <a href="#difusion" data-es="Publicaciones Recientes" data-en="Recent Publications">Publicaciones Recientes</a>
+        <a href="#team" data-es="Equipo" data-en="Team">Equipo</a>
+        <a href="#contact" data-es="Contacto" data-en="Contact">Contacto</a>
+    </nav>
+
+    <div class="header-actions">
+        <div class="lang-toggle" role="group" aria-label="Seleccionar idioma">
+            <button class="lang-btn active" id="btn-es" onclick="setLang('es')" aria-pressed="true">ES</button>
+            <button class="lang-btn" id="btn-en" onclick="setLang('en')" aria-pressed="false">EN</button>
+        </div>
+        <a href="#contact" class="btn-contact" data-es="Contacto" data-en="Contact Us">Contacto</a>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+            <span class="menu-icon">☰</span>
+        </button>
+    </div>
+</header>
+
+<!-- Mobile Nav Drawer -->
+<div class="mobile-nav-drawer" id="mobile-drawer" aria-hidden="true">
+    <a href="#quienes-somos" data-es="Quiénes Somos" data-en="About Us">Quiénes Somos</a>
+    <a href="servicios.html" data-es="Servicios" data-en="Services">Servicios</a>
+    <span class="mobile-sub-label" data-es="— Nuestros Servicios" data-en="— Our Services">— Nuestros Servicios</span>
+    <a href="servicios.html#insar-interferometria" class="mobile-sub-link" data-es="Interferometría InSAR" data-en="InSAR Interferometry">Interferometría InSAR</a>
+    <a href="servicios.html#drones-lidar" class="mobile-sub-link" data-es="Drones y LiDAR" data-en="Drones &amp; LiDAR">Drones y LiDAR</a>
+    <a href="servicios.html#geofisica-gpr" class="mobile-sub-link" data-es="Geofísica Aplicada" data-en="Applied Geophysics">Geofísica Aplicada</a>
+    <a href="servicios.html#infraestructura-critica" class="mobile-sub-link" data-es="Monitoreo de Infraestructura" data-en="Infrastructure Monitoring">Monitoreo de Infraestructura</a>
+    <a href="servicios.html#supercomputo-analitica" class="mobile-sub-link" data-es="Supercómputo Geoespacial" data-en="Geospatial Supercomputing">Supercómputo Geoespacial</a>
+    <a href="#proyectos" data-es="Proyectos" data-en="Projects">Proyectos</a>
+    <a href="#difusion" data-es="Publicaciones Recientes" data-en="Recent Publications">Publicaciones Recientes</a>
+    <a href="#team" data-es="Equipo" data-en="Team">Equipo</a>
+    <a href="#contact" data-es="Contacto" data-en="Contact">Contacto</a>
+</div>
+
+<!-- ======================== HERO (1st Scroll) ======================== -->
+<section id="hero" class="hero-earthdaily">
+    <div class="hero-earthdaily-bg">
+        <video id="landing-video" autoplay muted loop playsinline class="earthdaily-bg-video">
+            <source src="img/landing3.mp4" type="video/mp4">
+        </video>
+        <button id="video-audio-toggle" class="video-audio-btn" aria-label="Activar sonido">
+            <span class="audio-icon">🔇</span>
+            <span class="audio-text" data-es="Audio: Desactivado" data-en="Audio: Muted">Audio: Desactivado</span>
+        </button>
+    </div>
+
+    <div class="hero-vertical-center-left">
+        <h1 class="hero-big-title">
+            InSAR-TERRA-Lab
+        </h1>
+        <p class="hero-sub-title">
+            Terrestrial Engineering, Remote Sensing, Research &amp; Applications
+        </p>
+        <!-- Logos Institucionales FI / DICT -->
+        <div class="hero-instituciones-logos">
+            <img src="logos/instituciones/01_FI.png" alt="Facultad de Ingeniería UNAM" class="hero-inst-logo hero-fi-logo">
+            <img src="logos/instituciones/02_dict.png" alt="División de Ingenierías Civil y Geomática" class="hero-inst-logo">
+        </div>
+        <div class="earthdaily-ctas hero-ctas-left">
+            <a href="#quienes-somos" class="btn-earthdaily-white">
+                <span data-es="QUIÉNES SOMOS" data-en="ABOUT US">QUIÉNES SOMOS</span>
+                <span class="arrow">→</span>
+            </a>
+            <a href="#proyectos" class="btn-earthdaily-dark">
+                <span data-es="PROYECTOS" data-en="PROJECTS">PROYECTOS</span>
+                <span class="arrow">→</span>
+            </a>
+            <a href="servicios.html" class="btn-earthdaily-dark">
+                <span data-es="SERVICIOS" data-en="SERVICES">SERVICIOS</span>
+                <span class="arrow">→</span>
+            </a>
+        </div>
+    </div>
+    <!-- Carrusel de Colaboradores integrado en la parte inferior del Landing -->
+    <div id="colaboradores" class="collaborators-section collaborators-hero-bottom">
+        <div class="collaborators-header">
+            <h3 class="collaborators-plain-title" data-es="Alianzas Institucionales y Colaboradores" data-en="Institutional Partnerships & Collaborators">Alianzas Institucionales y Colaboradores</h3>
+        </div>
+        <div class="marquee-wrapper">
+            <div class="marquee-track">
+                <!-- Conjunto 1 -->
+                <div class="marquee-slide"><img src="logos/colaboradores/01_Logotipo_SECIHTI_2025-2030.svg.webp" alt="SECIHTI" loading="lazy"></div>
+                <div class="marquee-slide"><img src="logos/colaboradores/02_Logotipo%20SECTEI%2C%203-01%20.png" alt="SECTEI" loading="lazy"></div>
+                <div class="marquee-slide"><img src="logos/colaboradores/03.png" alt="Institución Colaboradora 3" loading="lazy"></div>
+                <div class="marquee-slide"><img src="logos/colaboradores/04_GOBMEX_CONAGUA.png" alt="CONAGUA" loading="lazy"></div>
+                <!-- Logos 05 y 06 agrupados juntos -->
+                <div class="marquee-slide-group">
+                    <img src="logos/colaboradores/05_Logo_CDMX.png" alt="Gobierno CDMX" loading="lazy">
+                    <img src="logos/colaboradores/06_Logo_Dependencia.png" alt="Dependencia CDMX" loading="lazy">
+                </div>
+                <div class="marquee-slide"><img src="logos/colaboradores/07_CentroGeo-CMX_Logo-H1.png" alt="CentroGeo" loading="lazy"></div>
+                <div class="marquee-slide"><img src="logos/colaboradores/08_Isterre.png" alt="ISTerre" loading="lazy"></div>
+                <div class="marquee-slide"><img src="logos/colaboradores/09_geofisica.png" alt="Instituto de Geofísica UNAM" loading="lazy"></div>
+                <div class="marquee-slide"><img src="logos/colaboradores/10_hidrogeology group.png" alt="Hidrogeology Group" loading="lazy"></div>
+
+                <!-- Conjunto 2 (Duplicado exacto para loop continuo) -->
+                <div class="marquee-slide" aria-hidden="true"><img src="logos/colaboradores/01_Logotipo_SECIHTI_2025-2030.svg.webp" alt="SECIHTI" loading="lazy"></div>
+                <div class="marquee-slide" aria-hidden="true"><img src="logos/colaboradores/02_Logotipo%20SECTEI%2C%203-01%20.png" alt="SECTEI" loading="lazy"></div>
+                <div class="marquee-slide" aria-hidden="true"><img src="logos/colaboradores/03.png" alt="Institución Colaboradora 3" loading="lazy"></div>
+                <div class="marquee-slide" aria-hidden="true"><img src="logos/colaboradores/04_GOBMEX_CONAGUA.png" alt="CONAGUA" loading="lazy"></div>
+                <!-- Logos 05 y 06 agrupados juntos (Duplicado) -->
+                <div class="marquee-slide-group" aria-hidden="true">
+                    <img src="logos/colaboradores/05_Logo_CDMX.png" alt="Gobierno CDMX" loading="lazy">
+                    <img src="logos/colaboradores/06_Logo_Dependencia.png" alt="Dependencia CDMX" loading="lazy">
+                </div>
+                <div class="marquee-slide" aria-hidden="true"><img src="logos/colaboradores/07_CentroGeo-CMX_Logo-H1.png" alt="CentroGeo" loading="lazy"></div>
+                <div class="marquee-slide" aria-hidden="true"><img src="logos/colaboradores/08_Isterre.png" alt="ISTerre" loading="lazy"></div>
+                <div class="marquee-slide" aria-hidden="true"><img src="logos/colaboradores/09_geofisica.png" alt="Instituto de Geofísica UNAM" loading="lazy"></div>
+                <div class="marquee-slide" aria-hidden="true"><img src="logos/colaboradores/10_hidrogeology group.png" alt="Hidrogeology Group" loading="lazy"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ======================== PROYECTOS (2nd Scroll) ======================== -->
+
+
+<section id="quienes-somos">
+    <div class="section-container" style="padding-top: 5rem; padding-bottom: 5.5rem;">
+        
+        <div class="section-header" style="margin-bottom: 2.5rem;">
+            <h2 class="section-title" data-es="Acerca de nosotros" data-en="About Us">
+                Acerca de nosotros
+            </h2>
+        </div>
+
+        <!-- Texto General Introductorio Justificado a Ancho Completo -->
+        <div class="about-overview-block animate-on-scroll">
+            <p class="about-overview-text"
+               data-es="El InSAR TERRA Lab (Terrestrial Engineering, Remote Sensing, Research &amp; Applications) de la Facultad de Ingeniería de la UNAM es un laboratorio especializado en el monitoreo integral de la superficie terrestre y el subsuelo desde una perspectiva ingenieril y geotécnica. Mediante la fusión de percepción remota satelital, sensores aerotransportados y geofísica aplicada, transformamos datos complejos en diagnósticos precisos y soluciones para la toma de decisiones estratégicas en el país, al tiempo que formamos a los futuros profesionales y especialistas en el dominio de estas tecnologías de vanguardia."
+               data-en="The InSAR TERRA Lab (Terrestrial Engineering, Remote Sensing, Research &amp; Applications) at the Faculty of Engineering, UNAM, is a specialized laboratory dedicated to comprehensive monitoring of the Earth's surface and subsurface from an engineering and geotechnical perspective. Through the fusion of satellite remote sensing, airborne sensors, and applied geophysics, we transform complex data into precise diagnostics and actionable solutions for strategic decision-making across the country, while educating future professionals and leaders in cutting-edge geospatial technologies.">
+                El InSAR TERRA Lab (Terrestrial Engineering, Remote Sensing, Research &amp; Applications) de la Facultad de Ingeniería de la UNAM es un laboratorio especializado en el monitoreo integral de la superficie terrestre y el subsuelo desde una perspectiva ingenieril y geotécnica. Mediante la fusión de percepción remota satelital, sensores aerotransportados y geofísica aplicada, transformamos datos complejos en diagnósticos precisos y soluciones para la toma de decisiones estratégicas en el país, al tiempo que formamos a los futuros profesionales y especialistas en el dominio de estas tecnologías de vanguardia.
+            </p>
+            <p class="about-overview-text"
+               data-es="Contamos con una infraestructura tecnológica única que integra interferometría radar (InSAR) de precisión milimétrica, drones equipados con posicionamiento satelital de alta exactitud, escáneres LiDAR (terrestres y aerotransportados), georradar (GPR), resistivímetro para tomografía eléctrica y capacidad de supercómputo. Esta versatilidad nos permite atender tanto la geotecnia y la seguridad de infraestructura crítica (presas, transporte masivo, refinerías y zonas de subsidencia urbana) como problemáticas clave en ciencias de la Tierra, incluyendo sismicidad y microsismicidad, actividad volcánica, riesgos geológicos y monitoreo ambiental y de emisiones de carbono."
+               data-en="We possess a unique technological infrastructure integrating millimeter-accuracy radar interferometry (InSAR), RTK-enabled UAVs, LiDAR scanners (terrestrial and airborne), ground penetrating radar (GPR), electrical resistivity tomography, and high-performance supercomputing capacity. This versatility allows us to tackle critical infrastructure geotechnics and resilience (dams, mass transit networks, industrial facilities, and urban subsidence) as well as pivotal Earth science challenges, including seismicity and microseismicity, volcanic activity, geohazards, environmental monitoring, and carbon emission assessments.">
+                Contamos con una infraestructura tecnológica única que integra interferometría radar (InSAR) de precisión milimétrica, drones equipados con posicionamiento satelital de alta exactitud, escáneres LiDAR (terrestres y aerotransportados), georradar (GPR), resistivímetro para tomografía eléctrica y capacidad de supercómputo. Esta versatilidad nos permite atender tanto la geotecnia y la seguridad de infraestructura crítica (presas, transporte masivo, refinerías y zonas de subsidencia urbana) como problemáticas clave en ciencias de la Tierra, incluyendo sismicidad y microsismicidad, actividad volcánica, riesgos geológicos y monitoreo ambiental y de emisiones de carbono.
+            </p>
+        </div>
+
+        <div class="about-narrative" style="padding: 0; gap: 4.5rem; margin-top: 3.5rem;">
+            
+            <!-- 1. Misión del Laboratorio -->
+            <div class="about-block animate-on-scroll">
+                <div class="about-text">
+                    <h3 class="about-block-title" data-es="Misión del Laboratorio" data-en="Laboratory Mission">
+                        Misión del Laboratorio
+                    </h3>
+                    <p class="about-paragraph"
+                       data-es="Generar conocimiento científico aplicado, soluciones de inteligencia geoespacial y formar profesionales de alto nivel mediante la integración de observación de la Tierra, sensores remotos, geofísica, geotecnia y supercómputo. Transformamos datos complejos de la superficie y el subsuelo en información estratégica para entender la dinámica terrestre, proteger infraestructura crítica y respaldar la toma de decisiones a escala local y global."
+                       data-en="Generate applied scientific knowledge, geospatial intelligence solutions, and train top-tier professionals through the integration of Earth observation, remote sensors, geophysics, geotechnics, and supercomputing. We transform complex surface and subsurface data into strategic insights to comprehend terrestrial dynamics, safeguard critical infrastructure, and support evidence-based decision-making on local and global scales.">
+                        Generar conocimiento científico aplicado, soluciones de inteligencia geoespacial y formar profesionales de alto nivel mediante la integración de observación de la Tierra, sensores remotos, geofísica, geotecnia y supercómputo. Transformamos datos complejos de la superficie y el subsuelo en información estratégica para entender la dinámica terrestre, proteger infraestructura crítica y respaldar la toma de decisiones a escala local y global.
+                    </p>
+                </div>
+                <div class="about-image-wrapper img-mision" style="background:#0a192f; position:relative; overflow:hidden;">
+                    <img src="assets/nature_metro_insar.webp" alt="InSAR Mexico City Subsidence - Nature Scientific Reports" style="width:100%; height:100%; object-fit:cover; transition:transform 0.5s var(--ease);">
+                    <div style="position:absolute; bottom:0; left:0; right:0; background:linear-gradient(transparent, rgba(7,11,17,0.92)); padding:1rem 1.2rem; color:var(--clr-white);">
+                        <span style="font-family:var(--font-mono); font-size:0.62rem; color:var(--clr-teal); letter-spacing:0.1em; display:block; margin-bottom:0.2rem;">FIG 1. NATURE SCIENTIFIC REPORTS</span>
+                        <span style="font-size:0.75rem; color:rgba(255,255,255,0.7); display:block; line-height:1.3;">Mapa InSAR de velocidad de deformación en la red de infraestructura crítica de la CDMX.</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Visión a Futuro -->
+            <div class="about-block reverse animate-on-scroll">
+                <div class="about-text">
+                    <h3 class="about-block-title" data-es="Visión a Futuro" data-en="Future Vision">
+                        Visión a Futuro
+                    </h3>
+                    <p class="about-paragraph"
+                       data-es="Consolidarnos como un laboratorio líder y referente internacional en analítica geoespacial e ingeniería terrestre desde la Facultad de Ingeniería de la UNAM. Aspiramos a impulsar la frontera del monitoreo continuo del planeta mediante la fusión multisensor y el procesamiento masivo de datos, convirtiéndonos en un aliado clave para la innovación científica, el desarrollo industrial y la formación de la próxima generación de especialistas en ciencias de la Tierra."
+                       data-en="Consolidate our position as an international reference and leading laboratory in geospatial analytics and terrestrial engineering from the Faculty of Engineering at UNAM. We aim to advance the frontier of continuous Earth monitoring through multisensor fusion and big data processing, becoming a key partner for scientific innovation, industrial development, and educating the next generation of Earth science specialists.">
+                        Consolidarnos como un laboratorio líder y referente internacional en analítica geoespacial e ingeniería terrestre desde la Facultad de Ingeniería de la UNAM. Aspiramos a impulsar la frontera del monitoreo continuo del planeta mediante la fusión multisensor y el procesamiento masivo de datos, convirtiéndonos en un aliado clave para la innovación científica, el desarrollo industrial y la formación de la próxima generación de especialistas en ciencias de la Tierra.
+                    </p>
+                </div>
+                <div class="about-image-wrapper img-vision" style="background:#0a192f; position:relative; overflow:hidden;">
+                    <img src="img/img3.jpeg" alt="Future Vision InSAR-TERRA Lab" style="width:100%; height:100%; object-fit:cover; transition:transform 0.5s var(--ease);">
+                </div>
+            </div>
+
+            <!-- 3. Objetivos del Laboratorio -->
+            <div class="about-block animate-on-scroll">
+                <div class="about-text">
+                    <h3 class="about-block-title" data-es="Objetivos del Laboratorio" data-en="Laboratory Objectives">
+                        Objetivos del Laboratorio
+                    </h3>
+                    <ul class="about-objectives-list">
+                        <li>
+                            <strong data-es="Generación de Conocimiento Científico Aplicado:" data-en="Generation of Applied Scientific Knowledge:">Generación de Conocimiento Científico Aplicado:</strong>
+                            <span data-es="Desarrollar investigación de frontera en observación de la Tierra, geociencias e ingeniería para comprender procesos físicos complejos y convertir descubrimientos científicos en aplicaciones prácticas de alto impacto."
+                                  data-en="Conduct frontier research in Earth observation, geosciences, and engineering to understand complex physical processes and translate scientific discoveries into high-impact practical solutions.">
+                                Desarrollar investigación de frontera en observación de la Tierra, geociencias e ingeniería para comprender procesos físicos complejos y convertir descubrimientos científicos en aplicaciones prácticas de alto impacto.
+                            </span>
+                        </li>
+                        <li>
+                            <strong data-es="Desarrollo de Proyectos de Investigación y Vinculación:" data-en="Research Projects & Institutional Collaboration:">Desarrollo de Proyectos de Investigación y Vinculación:</strong>
+                            <span data-es="Impulsar proyectos estratégicos de I+D en colaboración con el sector público, la industria y organismos internacionales, transfiriendo soluciones tecnológicas y analíticas para resolver desafíos reales en infraestructura, energía, riesgos y medio ambiente."
+                                  data-en="Drive strategic R&amp;D projects in synergy with the public sector, industry, and international organizations, delivering analytical and technological solutions for real-world challenges in infrastructure, energy, hazards, and the environment.">
+                                Impulsar proyectos estratégicos de I+D en colaboración con el sector público, la industria y organismos internacionales, transfiriendo soluciones tecnológicas y analíticas para resolver desafíos reales en infraestructura, energía, riesgos y medio ambiente.
+                            </span>
+                        </li>
+                        <li>
+                            <strong data-es="Fusión Multisensor y Analítica Avanzada:" data-en="Multisensor Fusion & Advanced Analytics:">Fusión Multisensor y Analítica Avanzada:</strong>
+                            <span data-es="Integrar plataformas satelitales, aéreas y terrestres con capacidades de supercómputo para escalar el monitoreo de la superficie y el subsuelo con alta resolución espacial y temporal."
+                                  data-en="Integrate satellite, airborne, and ground-based sensors empowered by high-performance computing to scale Earth surface and subsurface deformation tracking at unprecedented spatial and temporal resolutions.">
+                                Integrar plataformas satelitales, aéreas y terrestres con capacidades de supercómputo para escalar el monitoreo de la superficie y el subsuelo con alta resolución espacial y temporal.
+                            </span>
+                        </li>
+                        <li>
+                            <strong data-es="Formación de Profesionales y Talento Especializado:" data-en="Education of High-Level Talent & Specialists:">Formación de Profesionales y Talento Especializado:</strong>
+                            <span data-es="Capacitar a estudiantes e investigadores en el dominio de tecnologías geoespaciales, instrumentación avanzada y ciencia de datos aplicada, preparándolos como profesionales altamente competitivos a nivel global."
+                                  data-en="Train undergraduate and postgraduate students in geospatial technology mastery, cutting-edge geodetic instrumentation, and applied data science, forging world-class competitive specialists.">
+                                Capacitar a estudiantes e investigadores en el dominio de tecnologías geoespaciales, instrumentación avanzada y ciencia de datos aplicada, preparándolos como profesionales altamente competitivos a nivel global.
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="about-image-wrapper img-objetivos" style="background:#0a192f; position:relative; overflow:hidden;">
+                    <img src="img/img2.jpeg" alt="Laboratory Objectives InSAR-TERRA Lab" style="width:100%; height:100%; object-fit:cover; transition:transform 0.5s var(--ease);">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="proyectos">
+    <div class="section-container">
+        <div class="projects-header">
+            <div>
+                <div class="section-eyebrow dark" style="margin-bottom:0.75rem;">
+                    <span data-es="Investigación y Desarrollo" data-en="Research & Development">Investigación y Desarrollo</span>
+                </div>
+                <h2 class="projects-title" data-es="Proyectos de Monitoreo e Investigación" data-en="Monitoring & Research Projects">
+                    Proyectos de Monitoreo e Investigación
+                </h2>
+            </div>
+            <div class="carousel-nav-controls">
+                <button class="carousel-btn btn-light" id="projects-prev" aria-label="Proyecto anterior">←</button>
+                <button class="carousel-btn btn-light" id="projects-next" aria-label="Proyecto siguiente">→</button>
+            </div>
+        </div>
+
+        <div class="projects-carousel-wrapper">
+            <div class="projects-carousel-track" id="projects-track">
+                <!-- Proyecto 1: Presa La Amistad -->
+                <div class="project-card animate-on-scroll">
+                    <div class="project-header-top">
+                        <div class="project-tags">
+                            <span class="project-tag" data-es="INFRAESTRUCTURA HIDRÁULICA" data-en="HYDRAULIC INFRASTRUCTURE">INFRAESTRUCTURA HIDRÁULICA</span>
+                            <span class="project-tag">MT-InSAR</span>
+                            <span class="project-tag">Sentinel-1 / TSX</span>
+                        </div>
+                        <h3 class="project-title"
+                            data-es="Monitoreo estructural y geológico de la Presa transfronteriza: La Amistad"
+                            data-en="Structural and Geological Monitoring of the Transboundary Dam: La Amistad">
+                            Monitoreo estructural y geológico de la Presa transfronteriza: La Amistad
+                        </h3>
+                    </div>
+                    <div class="project-thumb" style="background:none; overflow:hidden;">
+                        <img src="img/proyectos/presa.png" alt="Presa La Amistad InSAR - InSAR-TERRA Lab" style="width:100%; height:100%; object-fit:cover; transition:transform 0.4s var(--ease);">
+                    </div>
+                    <div class="project-body">
+                        <p class="project-excerpt"
+                           data-es="Evaluación cinemática y detección milimétrica de deformaciones estructurales en la cortina, estribos y laderas circundantes de la presa binacional La Amistad mediante análisis de series temporales InSAR multisensores."
+                           data-en="Kinematic evaluation and millimetric deformation tracking of the dam crest, abutments, and surrounding slopes at the bi-national La Amistad dam using multi-sensor InSAR time-series analysis.">
+                            Evaluación cinemática y detección milimétrica de deformaciones estructurales en la cortina, estribos y laderas circundantes de la presa binacional La Amistad mediante análisis de series temporales InSAR multisensores.
+                        </p>
+                        <div class="project-meta">
+                            <span class="project-date">2024 · <span data-es="Proyecto Activo" data-en="Active Project">Proyecto Activo</span></span>
+                            <a href="#contact" class="project-read"><span data-es="Ver detalles" data-en="View details">Ver detalles</span> →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 2: InSAR-CDMX -->
+                <div class="project-card animate-on-scroll">
+                    <div class="project-header-top">
+                        <div class="project-tags">
+                            <span class="project-tag" data-es="SUBSIDENCIA URBANA" data-en="URBAN SUBSIDENCE">SUBSIDENCIA URBANA</span>
+                            <span class="project-tag">PS-InSAR</span>
+                            <span class="project-tag">Sentinel-1</span>
+                        </div>
+                        <h3 class="project-title"
+                            data-es="InSAR-CDMX: Sistema de Monitoreo de la Subsidencia de Infraestructura Crítica en Ciudad de México"
+                            data-en="InSAR-CDMX: Critical Infrastructure Subsidence Monitoring System in Mexico City">
+                            InSAR-CDMX: Sistema de Monitoreo de la Subsidencia de Infraestructura Crítica en Ciudad de México
+                        </h3>
+                    </div>
+                    <div class="project-thumb" style="background:none; overflow:hidden;">
+                        <img src="assets/nature_metro_insar.webp" alt="InSAR-CDMX Subsidencia Infraestructura Crítica" style="width:100%; height:100%; object-fit:cover; transition:transform 0.4s var(--ease);">
+                    </div>
+                    <div class="project-body">
+                        <p class="project-excerpt"
+                           data-es="Plataforma de alta resolución para cuantificar gradientes de deformación y subsidencia diferencial de hasta 40 cm/año a lo largo de líneas de metro, tren interurbano, acueductos y vialidades principales del Valle de México."
+                           data-en="High-resolution platform to quantify deformation gradients and differential subsidence up to 40 cm/year along metro lines, commuter rail, aqueducts, and primary transport corridors across Mexico City.">
+                            Plataforma de alta resolución para cuantificar gradientes de deformación y subsidencia diferencial de hasta 40 cm/año a lo largo de líneas de metro, tren interurbano, acueductos y vialidades principales del Valle de México.
+                        </p>
+                        <div class="project-meta">
+                            <span class="project-date">2024 · <span data-es="Monitoreo Continuo" data-en="Continuous Monitoring">Monitoreo Continuo</span></span>
+                            <a href="#contact" class="project-read"><span data-es="Ver detalles" data-en="View details">Ver detalles</span> →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 3: Presas CDMX y Cambio Climático -->
+                <div class="project-card animate-on-scroll">
+                    <div class="project-header-top">
+                        <div class="project-tags">
+                            <span class="project-tag" data-es="CAMBIO CLIMÁTICO" data-en="CLIMATE CHANGE">CAMBIO CLIMÁTICO</span>
+                            <span class="project-tag">SBAS / DInSAR</span>
+                            <span class="project-tag">ALOS-2 / S1</span>
+                        </div>
+                        <h3 class="project-title"
+                            data-es="Monitoreo de la vulnerabilidad física y ante el cambio climático de las presas en Ciudad de México"
+                            data-en="Physical Vulnerability and Climate Change Monitoring of Dams in Mexico City">
+                            Monitoreo de la vulnerabilidad física y ante el cambio climático de las presas en Ciudad de México
+                        </h3>
+                    </div>
+                    <div class="project-thumb" style="background:none; overflow:hidden;">
+                        <img src="assets/nature_2020_fig2.png" alt="Monitoreo de Presas en CDMX y Cambio Climático" style="width:100%; height:100%; object-fit:cover; transition:transform 0.4s var(--ease);">
+                    </div>
+                    <div class="project-body">
+                        <p class="project-excerpt"
+                           data-es="Caracterización de la estabilidad mecánica, fluctuaciones de embalse inducidas por eventos hidrometeorológicos extremos y diagnóstico de vulnerabilidad estructural en los vasos reguladores y presas de la cuenca poniente."
+                           data-en="Assessment of mechanical stability, reservoir level fluctuations driven by extreme precipitation events, and structural vulnerability diagnostics for retention basins and dams across western Mexico City.">
+                            Caracterización de la estabilidad mecánica, fluctuaciones de embalse inducidas por eventos hidrometeorológicos extremos y diagnóstico de vulnerabilidad estructural en los vasos reguladores y presas de la cuenca poniente.
+                        </p>
+                        <div class="project-meta">
+                            <span class="project-date">2024 · <span data-es="Proyecto Activo" data-en="Active Project">Proyecto Activo</span></span>
+                            <a href="#contact" class="project-read"><span data-es="Ver detalles" data-en="View details">Ver detalles</span> →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 4: Patrimonio Cultural Centro Histórico -->
+                <div class="project-card animate-on-scroll">
+                    <div class="project-header-top">
+                        <div class="project-tags">
+                            <span class="project-tag" data-es="PATRIMONIO CULTURAL" data-en="CULTURAL HERITAGE">PATRIMONIO CULTURAL</span>
+                            <span class="project-tag">PS-InSAR</span>
+                            <span class="project-tag">Alta Densidad</span>
+                        </div>
+                        <h3 class="project-title"
+                            data-es="Observatorio de peligros geológicos del Patrimonio cultural en el Centro Histórico de la Ciudad de México"
+                            data-en="Geological Hazards Observatory of Cultural Heritage in the Historic Center of Mexico City">
+                            Observatorio de peligros geológicos del Patrimonio cultural en el Centro Histórico de la Ciudad de México
+                        </h3>
+                    </div>
+                    <div class="project-thumb" style="background:none; overflow:hidden;">
+                        <img src="assets/wiley_jgrb_fig2.jpg" alt="Patrimonio Cultural Centro Histórico CDMX InSAR" style="width:100%; height:100%; object-fit:cover; transition:transform 0.4s var(--ease);">
+                    </div>
+                    <div class="project-body">
+                        <p class="project-excerpt"
+                           data-es="Monitoreo de hundimiento diferencial, inclinación angular y fracturamiento superficial que amenazan templos, monumentos coloniales y edificios históricos protegidos por la UNESCO en el corazón lacustre de la capital."
+                           data-en="Tracking differential subsidence, angular tilting, and surface faulting threatening colonial temples, monuments, and UNESCO-protected historical buildings across the ancient lakebed of downtown Mexico City.">
+                            Monitoreo de hundimiento diferencial, inclinación angular y fracturamiento superficial que amenazan templos, monumentos coloniales y edificios históricos protegidos por la UNESCO en el corazón lacustre de la capital.
+                        </p>
+                        <div class="project-meta">
+                            <span class="project-date">2024 · <span data-es="Observatorio Permanente" data-en="Permanent Observatory">Observatorio Permanente</span></span>
+                            <a href="#contact" class="project-read"><span data-es="Ver detalles" data-en="View details">Ver detalles</span> →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Indicadores de puntos del carrusel de proyectos -->
+        <div class="projects-dots-indicator" id="projects-dots">
+            <span class="project-dot active" data-index="0"></span>
+            <span class="project-dot" data-index="1"></span>
+            <span class="project-dot" data-index="2"></span>
+        </div>
+    </div>
+</section>
+<!-- ======================== PUBLICACIONES RECIENTES (Deep Navy) ======================== -->
+<section id="difusion">
+    <div class="section-container">
+        <div class="features-header" style="margin-bottom: 2.5rem;">
+            <div class="section-eyebrow centered">
+                <span data-es="Producción Científica y Divulgación" data-en="Scientific Output & Outreach">Producción Científica y Divulgación</span>
+            </div>
+            <h2 class="features-title" data-es="Publicaciones Recientes" data-en="Recent Publications">
+                Publicaciones Recientes
+            </h2>
+            <p class="features-desc"
+               data-es="Compartimos el conocimiento y acercamos la geodesia espacial y las tecnologías de radar satelital a la comunidad científica, instituciones públicas, universidades y público general."
+               data-en="We share knowledge and bring space geodesy and satellite radar technologies closer to the scientific community, public institutions, universities, and society.">
+                Compartimos el conocimiento y acercamos la geodesia espacial y las tecnologías de radar satelital a la comunidad científica, instituciones públicas, universidades y público general.
+            </p>
+        </div>
+
+        <!-- ======================== RESEARCH PAPERS ======================== -->
+        <div class="papers-section animate-on-scroll">
+            <div class="papers-header">
+                <div>
+                    <div class="section-eyebrow" style="margin-bottom:0.5rem;">
+                        <span data-es="Artículos Científicos" data-en="Peer-Reviewed">Artículos Científicos</span>
+                    </div>
+                    <h3 class="papers-title" data-es="Artículos de Investigación" data-en="Research papers">
+                        Research papers
+                    </h3>
+                </div>
+                <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--clr-teal);">
+                    7 <span data-es="Artículos Indexados" data-en="Indexed Articles">Artículos Indexados</span>
+                </div>
+            </div>
+
+                        <div class="papers-list">
+                <div class="paper-item-wrap" id="paper-wrap-0">
+                    <!-- Cabecera original (clickeable para expandir) -->
+                    <button class="paper-item paper-toggle" aria-expanded="false" aria-controls="paper-abs-0">
+                        <div class="paper-figure-thumb">
+                            <img src="assets/sciadv_f1.jpg" alt="Science Advances - Seafloor Geodesy" loading="lazy">
+                        </div>
+                        <div class="paper-main">
+                            <div class="paper-meta">
+                                <span class="paper-journal">Science Advances</span>
+                                <span class="paper-year">2024</span>
+                            </div>
+                            <h4 class="paper-title">Seafloor Geodesy Unveils Seismogenesis of Large Subduction Earthquakes in México</h4>
+                            <span class="paper-doi">10.1126/sciadv.adu8259</span>
+                        </div>
+                        <span class="paper-action">
+                            <span class="paper-action-text" data-es="Ver resumen" data-en="View abstract">Ver resumen</span>
+                            <span class="paper-chevron" aria-hidden="true">▾</span>
+                        </span>
+                    </button>
+                    <!-- Panel desplegable con resumen y link -->
+                    <div class="paper-abstract-panel" id="paper-abs-0" aria-hidden="true">
+                        <p class="paper-abs-label" data-es="Resumen" data-en="Abstract">Resumen</p>
+                        <p class="paper-abs-text" data-es="Mediante geodesia de fondo marino combinada con InSAR satelital, este estudio revela los mecanismos sísmicos de grandes terremotos de subducción en México, identificando zonas de acoplamiento interplaca que controlan el potencial sismogénico de la costa del Pacífico mexicano." data-en="Using seafloor geodesy combined with satellite InSAR, this study unveils the seismogenic mechanisms of large subduction earthquakes in Mexico, identifying interplate coupling zones that control the seismogenic potential along the Mexican Pacific coast.">Mediante geodesia de fondo marino combinada con InSAR satelital, este estudio revela los mecanismos sísmicos de grandes terremotos de subducción en México, identificando zonas de acoplamiento interplaca que controlan el potencial sismogénico de la costa del Pacífico mexicano.</p>
+                        <a href="https://doi.org/10.1126/sciadv.adu8259" target="_blank" rel="noopener noreferrer" class="paper-read-link">
+                            <span data-es="Leer artículo completo" data-en="Read full paper">Leer artículo completo</span> ↗
+                        </a>
+                    </div>
+                </div>
+                <div class="paper-item-wrap" id="paper-wrap-1">
+                    <!-- Cabecera original (clickeable para expandir) -->
+                    <button class="paper-item paper-toggle" aria-expanded="false" aria-controls="paper-abs-1">
+                        <div class="paper-figure-thumb">
+                            <img src="assets/tectonophysics_gr11.jpg" alt="Tectonophysics - Slow-slip faults Mexico City" loading="lazy">
+                        </div>
+                        <div class="paper-main">
+                            <div class="paper-meta">
+                                <span class="paper-journal">Tectonophysics</span>
+                                <span class="paper-year">2025</span>
+                            </div>
+                            <h4 class="paper-title">Interplay of slow-slip faults beneath Mexico City induces intense seismicity over months</h4>
+                            <span class="paper-doi">10.1016/j.tecto.2025.230659</span>
+                        </div>
+                        <span class="paper-action">
+                            <span class="paper-action-text" data-es="Ver resumen" data-en="View abstract">Ver resumen</span>
+                            <span class="paper-chevron" aria-hidden="true">▾</span>
+                        </span>
+                    </button>
+                    <!-- Panel desplegable con resumen y link -->
+                    <div class="paper-abstract-panel" id="paper-abs-1" aria-hidden="true">
+                        <p class="paper-abs-label" data-es="Resumen" data-en="Abstract">Resumen</p>
+                        <p class="paper-abs-text" data-es="Este trabajo documenta cómo la interacción entre fallas de deslizamiento lento bajo la Ciudad de México desencadena secuencias sísmicas intensas durante meses. Mediante análisis InSAR de series temporales se mapean las deformaciones superficiales asociadas a estos eventos transitorios." data-en="This work documents how the interplay between slow-slip faults beneath Mexico City triggers intense seismic sequences lasting months. InSAR time-series analysis maps surface deformations associated with these transient events.">Este trabajo documenta cómo la interacción entre fallas de deslizamiento lento bajo la Ciudad de México desencadena secuencias sísmicas intensas durante meses. Mediante análisis InSAR de series temporales se mapean las deformaciones superficiales asociadas a estos eventos transitorios.</p>
+                        <a href="https://doi.org/10.1016/j.tecto.2025.230659" target="_blank" rel="noopener noreferrer" class="paper-read-link">
+                            <span data-es="Leer artículo completo" data-en="Read full paper">Leer artículo completo</span> ↗
+                        </a>
+                    </div>
+                </div>
+                <div class="paper-item-wrap" id="paper-wrap-2">
+                    <!-- Cabecera original (clickeable para expandir) -->
+                    <button class="paper-item paper-toggle" aria-expanded="false" aria-controls="paper-abs-2">
+                        <div class="paper-figure-thumb">
+                            <img src="assets/nature_fig3.png" alt="Nature Scientific Reports - Metro Line 12 Geohazard" loading="lazy">
+                        </div>
+                        <div class="paper-main">
+                            <div class="paper-meta">
+                                <span class="paper-journal">Scientific Reports — Nature</span>
+                                <span class="paper-year">2024</span>
+                            </div>
+                            <h4 class="paper-title">Millimeter-scale InSAR monitoring of geotechnical hazards in Mexico City's Metro Line 12 collapse</h4>
+                            <span class="paper-doi">10.1038/s41598-024-53525-y</span>
+                        </div>
+                        <span class="paper-action">
+                            <span class="paper-action-text" data-es="Ver resumen" data-en="View abstract">Ver resumen</span>
+                            <span class="paper-chevron" aria-hidden="true">▾</span>
+                        </span>
+                    </button>
+                    <!-- Panel desplegable con resumen y link -->
+                    <div class="paper-abstract-panel" id="paper-abs-2" aria-hidden="true">
+                        <p class="paper-abs-label" data-es="Resumen" data-en="Abstract">Resumen</p>
+                        <p class="paper-abs-text" data-es="Se presenta un monitoreo milimétrico mediante InSAR de los peligros geotécnicos asociados al colapso del tramo elevado de la Línea 12 del Metro de la Ciudad de México, identificando deformaciones precursoras y patrones de subsidencia diferencial en infraestructura de transporte." data-en="We present millimeter-scale InSAR monitoring of geotechnical hazards associated with the collapse of the elevated section of Mexico City's Metro Line 12, identifying precursory deformations and differential subsidence patterns in transportation infrastructure.">Se presenta un monitoreo milimétrico mediante InSAR de los peligros geotécnicos asociados al colapso del tramo elevado de la Línea 12 del Metro de la Ciudad de México, identificando deformaciones precursoras y patrones de subsidencia diferencial en infraestructura de transporte.</p>
+                        <a href="https://doi.org/10.1038/s41598-024-53525-y" target="_blank" rel="noopener noreferrer" class="paper-read-link">
+                            <span data-es="Leer artículo completo" data-en="Read full paper">Leer artículo completo</span> ↗
+                        </a>
+                    </div>
+                </div>
+                <div class="paper-item-wrap" id="paper-wrap-3">
+                    <!-- Cabecera original (clickeable para expandir) -->
+                    <button class="paper-item paper-toggle" aria-expanded="false" aria-controls="paper-abs-3">
+                        <div class="paper-figure-thumb">
+                            <img src="assets/sciadv_f1.jpg" alt="ESSOAr AGU - Huatulco Earthquake Slow Slip" loading="lazy">
+                        </div>
+                        <div class="paper-main">
+                            <div class="paper-meta">
+                                <span class="paper-journal">ESSOAr / AGU</span>
+                                <span class="paper-year">2021</span>
+                            </div>
+                            <h4 class="paper-title">Slow slip events and megathrust coupling changes reveal the earthquake potential before the 2020 Mw 7.4 Huatulco, Mexico event</h4>
+                            <span class="paper-doi">10.1002/essoar.10504796.4</span>
+                        </div>
+                        <span class="paper-action">
+                            <span class="paper-action-text" data-es="Ver resumen" data-en="View abstract">Ver resumen</span>
+                            <span class="paper-chevron" aria-hidden="true">▾</span>
+                        </span>
+                    </button>
+                    <!-- Panel desplegable con resumen y link -->
+                    <div class="paper-abstract-panel" id="paper-abs-3" aria-hidden="true">
+                        <p class="paper-abs-label" data-es="Resumen" data-en="Abstract">Resumen</p>
+                        <p class="paper-abs-text" data-es="Los eventos de deslizamiento lento y los cambios en el acoplamiento de la megafalla revelaron el potencial sísmico previo al terremoto Mw 7.4 de Huatulco 2020. El análisis integrado de GPS e InSAR permitió caracterizar la evolución del ciclo sísmico en la zona de subducción de Oaxaca." data-en="Slow slip events and megathrust coupling changes revealed the seismic potential before the 2020 Mw 7.4 Huatulco earthquake. Integrated GPS and InSAR analysis enabled characterization of the seismic cycle evolution in the Oaxaca subduction zone.">Los eventos de deslizamiento lento y los cambios en el acoplamiento de la megafalla revelaron el potencial sísmico previo al terremoto Mw 7.4 de Huatulco 2020. El análisis integrado de GPS e InSAR permitió caracterizar la evolución del ciclo sísmico en la zona de subducción de Oaxaca.</p>
+                        <a href="https://doi.org/10.1002/essoar.10504796.4" target="_blank" rel="noopener noreferrer" class="paper-read-link">
+                            <span data-es="Leer artículo completo" data-en="Read full paper">Leer artículo completo</span> ↗
+                        </a>
+                    </div>
+                </div>
+                <div class="paper-item-wrap" id="paper-wrap-4">
+                    <!-- Cabecera original (clickeable para expandir) -->
+                    <button class="paper-item paper-toggle" aria-expanded="false" aria-controls="paper-abs-4">
+                        <div class="paper-figure-thumb">
+                            <img src="assets/wiley_jgrb_fig2.jpg" alt="JGR Solid Earth - Century of Sinking Mexico City" loading="lazy">
+                        </div>
+                        <div class="paper-main">
+                            <div class="paper-meta">
+                                <span class="paper-journal">JGR Solid Earth</span>
+                                <span class="paper-year">2021</span>
+                            </div>
+                            <h4 class="paper-title">Over a Century of Sinking in Mexico City: No Hope for Significant Elevation and Storage Capacity Recovery</h4>
+                            <span class="paper-doi">10.1029/2020jb020648</span>
+                        </div>
+                        <span class="paper-action">
+                            <span class="paper-action-text" data-es="Ver resumen" data-en="View abstract">Ver resumen</span>
+                            <span class="paper-chevron" aria-hidden="true">▾</span>
+                        </span>
+                    </button>
+                    <!-- Panel desplegable con resumen y link -->
+                    <div class="paper-abstract-panel" id="paper-abs-4" aria-hidden="true">
+                        <p class="paper-abs-label" data-es="Resumen" data-en="Abstract">Resumen</p>
+                        <p class="paper-abs-text" data-es="Más de un siglo de hundimiento en la Ciudad de México es analizado mediante datos históricos de nivelación, GPS e InSAR satelital. Los resultados indican tasas de subsidencia de hasta 50 cm/año en algunas zonas y proyectan que no existe perspectiva de recuperación significativa de elevación o capacidad de almacenamiento hídrico." data-en="Over a century of sinking in Mexico City is analyzed through historical leveling data, GPS, and satellite InSAR. Results indicate subsidence rates of up to 50 cm/year and project no prospect of significant elevation or water storage capacity recovery.">Más de un siglo de hundimiento en la Ciudad de México es analizado mediante datos históricos de nivelación, GPS e InSAR satelital. Los resultados indican tasas de subsidencia de hasta 50 cm/año en algunas zonas y proyectan que no existe perspectiva de recuperación significativa de elevación o capacidad de almacenamiento hídrico.</p>
+                        <a href="https://doi.org/10.1029/2020jb020648" target="_blank" rel="noopener noreferrer" class="paper-read-link">
+                            <span data-es="Leer artículo completo" data-en="Read full paper">Leer artículo completo</span> ↗
+                        </a>
+                    </div>
+                </div>
+                <div class="paper-item-wrap" id="paper-wrap-5">
+                    <!-- Cabecera original (clickeable para expandir) -->
+                    <button class="paper-item paper-toggle" aria-expanded="false" aria-controls="paper-abs-5">
+                        <div class="paper-figure-thumb">
+                            <img src="assets/nature_2020_fig2.png" alt="Nature Scientific Reports - InSAR Band-pass filtering" loading="lazy">
+                        </div>
+                        <div class="paper-main">
+                            <div class="paper-meta">
+                                <span class="paper-journal">Scientific Reports — Nature</span>
+                                <span class="paper-year">2020</span>
+                            </div>
+                            <h4 class="paper-title">Detecting differential ground displacements of civil structures in fast-subsiding metropolises with interferometric SAR and band-pass filtering</h4>
+                            <span class="paper-doi">10.1038/s41598-020-72293-z</span>
+                        </div>
+                        <span class="paper-action">
+                            <span class="paper-action-text" data-es="Ver resumen" data-en="View abstract">Ver resumen</span>
+                            <span class="paper-chevron" aria-hidden="true">▾</span>
+                        </span>
+                    </button>
+                    <!-- Panel desplegable con resumen y link -->
+                    <div class="paper-abstract-panel" id="paper-abs-5" aria-hidden="true">
+                        <p class="paper-abs-label" data-es="Resumen" data-en="Abstract">Resumen</p>
+                        <p class="paper-abs-text" data-es="Se propone un método de filtrado paso de banda aplicado a SAR interferométrico para detectar desplazamientos diferenciales del terreno en estructuras civiles dentro de metrópolis con subsidencia acelerada, mejorando significativamente la precisión del monitoreo en entornos urbanos complejos." data-en="A band-pass filtering method applied to interferometric SAR detects differential ground displacements of civil structures within fast-subsiding metropolises, significantly improving monitoring precision in complex urban environments.">Se propone un método de filtrado paso de banda aplicado a SAR interferométrico para detectar desplazamientos diferenciales del terreno en estructuras civiles dentro de metrópolis con subsidencia acelerada, mejorando significativamente la precisión del monitoreo en entornos urbanos complejos.</p>
+                        <a href="https://doi.org/10.1038/s41598-020-72293-z" target="_blank" rel="noopener noreferrer" class="paper-read-link">
+                            <span data-es="Leer artículo completo" data-en="Read full paper">Leer artículo completo</span> ↗
+                        </a>
+                    </div>
+                </div>
+                <div class="paper-item-wrap" id="paper-wrap-6">
+                    <!-- Cabecera original (clickeable para expandir) -->
+                    <button class="paper-item paper-toggle" aria-expanded="false" aria-controls="paper-abs-6">
+                        <div class="paper-figure-thumb">
+                            <img src="assets/piahs_f01.png" alt="PIAHS Copernicus - Multi-platform InSAR Subsidence" loading="lazy">
+                        </div>
+                        <div class="paper-main">
+                            <div class="paper-meta">
+                                <span class="paper-journal">PIAHS — Copernicus</span>
+                                <span class="paper-year">2020</span>
+                            </div>
+                            <h4 class="paper-title">A multiscale approach for detection and mapping differential subsidence using multi-platform InSAR products</h4>
+                            <span class="paper-doi">10.5194/piahs-382-173-2020</span>
+                        </div>
+                        <span class="paper-action">
+                            <span class="paper-action-text" data-es="Ver resumen" data-en="View abstract">Ver resumen</span>
+                            <span class="paper-chevron" aria-hidden="true">▾</span>
+                        </span>
+                    </button>
+                    <!-- Panel desplegable con resumen y link -->
+                    <div class="paper-abstract-panel" id="paper-abs-6" aria-hidden="true">
+                        <p class="paper-abs-label" data-es="Resumen" data-en="Abstract">Resumen</p>
+                        <p class="paper-abs-text" data-es="Se presenta un enfoque multiescala para detectar y cartografiar la subsidencia diferencial combinando productos InSAR de múltiples plataformas satelitales (Sentinel-1, ALOS-2 y TerraSAR-X), logrando mayor cobertura espacial y temporal en zonas urbanas con hundimiento acelerado." data-en="A multiscale approach detects and maps differential subsidence combining InSAR products from multiple satellite platforms (Sentinel-1, ALOS-2, TerraSAR-X), achieving greater spatial and temporal coverage in urban areas with accelerated subsidence.">Se presenta un enfoque multiescala para detectar y cartografiar la subsidencia diferencial combinando productos InSAR de múltiples plataformas satelitales (Sentinel-1, ALOS-2 y TerraSAR-X), logrando mayor cobertura espacial y temporal en zonas urbanas con hundimiento acelerado.</p>
+                        <a href="https://doi.org/10.5194/piahs-382-173-2020" target="_blank" rel="noopener noreferrer" class="paper-read-link">
+                            <span data-es="Leer artículo completo" data-en="Read full paper">Leer artículo completo</span> ↗
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ======================== CAROUSEL DE NOTICIAS ======================== -->
+        <div class="news-carousel-section">
+            <div class="news-carousel-header">
+                <div>
+                    <div class="section-eyebrow" style="margin-bottom:0.5rem;">
+                        <span data-es="Cobertura en Medios" data-en="Media Coverage">Cobertura en Medios</span>
+                    </div>
+                    <h3 class="news-carousel-title" data-es="Publicaciones Recientes en Medios" data-en="Recent Posts">
+                        Recent Posts
+                    </h3>
+                </div>
+                <div class="carousel-nav-controls">
+                    <button class="carousel-btn" id="news-prev" aria-label="Noticia anterior">←</button>
+                    <button class="carousel-btn" id="news-next" aria-label="Noticia siguiente">→</button>
+                </div>
+            </div>
+
+            <div class="news-carousel-wrapper">
+                <div class="news-carousel-track" id="news-track">
+
+                    <!-- Noticia 1: UAM -->
+                    <article class="news-card">
+                        <div class="news-card-thumb">
+                            <img src="https://boletines.uam.mx/wp-content/uploads/2025/07/Numero-481.jpg" 
+                                 alt="Crecimiento urbano sobreexplotación sistema hídrico" loading="lazy"
+                                 onerror="this.src='https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&auto=format&fit=crop&q=80'">
+                            <span class="news-source-tag">UAM</span>
+                        </div>
+                        <div class="news-card-body">
+                            <h4 class="news-card-title"
+                                data-es="Crecimiento urbano, intensifica sobreexplotación del sistema hídrico"
+                                data-en="Urban growth intensifies water system overexploitation">
+                                Crecimiento urbano, intensifica sobreexplotación del sistema hídrico
+                            </h4>
+                            <p class="news-card-desc"
+                               data-es="Análisis del impacto de la extracción de agua subterránea y la aceleración de la subsidencia en la cuenca del Valle de México."
+                               data-en="Analysis of groundwater extraction impact and subsidence acceleration across the Valley of Mexico basin.">
+                                Análisis del impacto de la extracción de agua subterránea y la aceleración de la subsidencia en la cuenca del Valle de México.
+                            </p>
+                            <a href="https://boletines.uam.mx/numero-481-2/" target="_blank" rel="noopener noreferrer" class="news-card-link">
+                                <span data-es="Leer artículo completo" data-en="Read full article">Leer artículo completo</span> →
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Noticia 2: El País -->
+                    <article class="news-card">
+                        <div class="news-card-thumb">
+                            <img src="https://imagenes.elpais.com/resizer/v2/ME3CNRZZNNDIDP27KKRH3JYTPM.jpg?auth=9d32315895e3c24ffd8b93a90f0ce64fa8b3bdabd026cacb865d0dd8430b2c0e&width=1200" 
+                                 alt="El hundimiento de la Ciudad de México" loading="lazy"
+                                 onerror="this.src='https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&auto=format&fit=crop&q=80'">
+                            <span class="news-source-tag">EL PAÍS</span>
+                        </div>
+                        <div class="news-card-body">
+                            <h4 class="news-card-title"
+                                data-es="El hundimiento de la Ciudad de México"
+                                data-en="The sinking of Mexico City">
+                                El hundimiento de la Ciudad de México
+                            </h4>
+                            <p class="news-card-desc"
+                               data-es="Reportaje a fondo sobre cómo la capital mexicana se hunde a ritmos históricos debido a las características geológicas y acuíferas de la zona lacustre."
+                               data-en="In-depth report on how the Mexican capital is sinking at historic rates due to geological and aquifer conditions in the lakebed.">
+                                Reportaje a fondo sobre cómo la capital mexicana se hunde a ritmos históricos debido a las características geológicas y acuíferas de la zona lacustre.
+                            </p>
+                            <a href="https://english.elpais.com/international/2025-09-01/the-sinking-of-mexico-city.html" target="_blank" rel="noopener noreferrer" class="news-card-link">
+                                <span data-es="Leer artículo completo" data-en="Read full article">Leer artículo completo</span> →
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Noticia 3: FIU News -->
+                    <article class="news-card">
+                        <div class="news-card-thumb">
+                            <img src="https://res.cloudinary.com/digicomm/image/upload/t_metadata/news-magazine/2024/_assets/img_1790.jpg" 
+                                 alt="Study identifies areas in Mexico City Metro affected by land subsidence" loading="lazy"
+                                 onerror="this.src='https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&auto=format&fit=crop&q=80'">
+                            <span class="news-source-tag">FIU NEWS</span>
+                        </div>
+                        <div class="news-card-body">
+                            <h4 class="news-card-title"
+                                data-es="Study identifies areas in Mexico City Metro affected by land subsidence"
+                                data-en="Study identifies areas in Mexico City Metro affected by land subsidence">
+                                Study identifies areas in Mexico City Metro affected by land subsidence
+                            </h4>
+                            <p class="news-card-desc"
+                               data-es="Datos satelitales InSAR revelan puntos críticos de deformación diferencial a lo largo de las líneas y estaciones del Sistema de Transporte Colectivo Metro."
+                               data-en="Satellite InSAR data reveals critical hotspots of differential deformation along tracks and stations of Mexico City's metro transit network.">
+                                Datos satelitales InSAR revelan puntos críticos de deformación diferencial a lo largo de las líneas y estaciones del Sistema de Transporte Colectivo Metro.
+                            </p>
+                            <a href="https://news.fiu.edu/2024/satellite-data-points-to-vulnerabilities-in-mexico-citys-metro-system-scientists-offer-solutions" target="_blank" rel="noopener noreferrer" class="news-card-link">
+                                <span data-es="Leer artículo completo" data-en="Read full article">Leer artículo completo</span> →
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Noticia 4: Wired -->
+                    <article class="news-card">
+                        <div class="news-card-thumb">
+                            <img src="https://media.wired.com/photos/660f24706ee140a5648de195/191:100/w_1280,c_limit/Mexico_City_subsidence_Science-1533817394.jpg" 
+                                 alt="Mexico City’s Metro System Is Sinking Fast" loading="lazy"
+                                 onerror="this.src='https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&auto=format&fit=crop&q=80'">
+                            <span class="news-source-tag">WIRED</span>
+                        </div>
+                        <div class="news-card-body">
+                            <h4 class="news-card-title"
+                                data-es="Mexico City’s Metro System Is Sinking Fast. Yours Could Be Next"
+                                data-en="Mexico City’s Metro System Is Sinking Fast. Yours Could Be Next">
+                                Mexico City’s Metro System Is Sinking Fast. Yours Could Be Next
+                            </h4>
+                            <p class="news-card-desc"
+                               data-es="Investigación sobre el colapso y hundimiento acelerado de infraestructura subterránea urbana y las lecciones para megaciudades globales."
+                               data-en="Investigation into the accelerating subsidence of underground transit infrastructure and the global lessons for coastal and lakebed megacities.">
+                                Investigación sobre el colapso y hundimiento acelerado de infraestructura subterránea urbana y las lecciones para megaciudades globales.
+                            </p>
+                            <a href="https://www.wired.com/story/mexico-city-metro-sinking-subsidence/" target="_blank" rel="noopener noreferrer" class="news-card-link">
+                                <span data-es="Leer artículo completo" data-en="Read full article">Leer artículo completo</span> →
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Noticia 5: The Guardian -->
+                    <article class="news-card">
+                        <div class="news-card-thumb">
+                            <img src="https://i.guim.co.uk/img/media/9ca924a9cdf6b33029b34db7dc38339d24bc251d/769_0_7920_6336/master/7920.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=e2eb23bd13ca0ca72ee28fc2736b34b2" 
+                                 alt="NASA monitorea el hundimiento de la CDMX" loading="lazy"
+                                 onerror="this.src='https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&auto=format&fit=crop&q=80'">
+                            <span class="news-source-tag">THE GUARDIAN / NASA</span>
+                        </div>
+                        <div class="news-card-body">
+                            <h4 class="news-card-title"
+                                data-es="Hasta 2 cm al mes: la NASA monitorea el hundimiento de la Ciudad de México"
+                                data-en="Up to 2cm a month: NASA monitors Mexico City’s relentless subsidence">
+                                Hasta 2 cm al mes: la NASA monitorea el hundimiento de la Ciudad de México
+                            </h4>
+                            <p class="news-card-desc"
+                               data-es="Misiones de radar satelital (NISAR / Sentinel) registran tasas de deformación críticas que comprometen edificaciones y redes de agua potable."
+                               data-en="Satellite radar missions (NISAR / Sentinel) document extreme subsidence rates threatening buildings, foundations, and clean water delivery.">
+                                Misiones de radar satelital (NISAR / Sentinel) registran tasas de deformación críticas que comprometen edificaciones y redes de agua potable.
+                            </p>
+                            <a href="https://www.theguardian.com/world/2026/may/07/mexico-city-sinking-subsidence-2cm-a-month-nasa-nisar" target="_blank" rel="noopener noreferrer" class="news-card-link">
+                                <span data-es="Leer artículo completo" data-en="Read full article">Leer artículo completo</span> →
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Noticia 6: Prisma La Vista -->
+                    <article class="news-card">
+                        <div class="news-card-thumb">
+                            <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&auto=format&fit=crop&q=80" 
+                                 alt="Fallas en el Metro y hundimiento de la CDMX" loading="lazy">
+                            <span class="news-source-tag">PRISMA LA VISTA</span>
+                        </div>
+                        <div class="news-card-body">
+                            <h4 class="news-card-title"
+                                data-es="¿Cómo se relacionan las fallas en el Metro con el hundimiento de la CDMX?"
+                                data-en="How are Metro transit failures linked to Mexico City's subsidence?">
+                                ¿Cómo se relacionan las fallas en el Metro con el hundimiento de la CDMX?
+                            </h4>
+                            <p class="news-card-desc"
+                               data-es="Explicación técnica y geológica sobre cómo las fracturas del terreno y el desnivel diferencial afectan las vías y estructuras del metro capitalino."
+                               data-en="Technical and geological breakdown on how ground fracturing and differential slope changes impact tracks and transit structures.">
+                                Explicación técnica y geológica sobre cómo las fracturas del terreno y el desnivel diferencial afectan las vías y estructuras del metro capitalino.
+                            </p>
+                            <a href="https://prismalavista.com/2018/01/11/como-se-relacionan-las-fallas-en-el-metro-con-el-hundimiento-de-la-cdmx/" target="_blank" rel="noopener noreferrer" class="news-card-link">
+                                <span data-es="Leer artículo completo" data-en="Read full article">Leer artículo completo</span> →
+                            </a>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+
+            <!-- Indicadores de puntos -->
+            <div class="news-dots-indicator" id="news-dots">
+                <span class="news-dot active" data-index="0"></span>
+                <span class="news-dot" data-index="1"></span>
+                <span class="news-dot" data-index="2"></span>
+                <span class="news-dot" data-index="3"></span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ======================== EQUIPO (Canvas) ======================== -->
+<section id="team">
+    <div class="section-container">
+        <div class="section-header" style="margin-bottom: 3.5rem;">
+            <h2 class="section-title" data-es="Integrantes del laboratorio" data-en="Laboratory Members">
+                Integrantes del laboratorio
+            </h2>
+            <p class="section-desc"
+               data-es="Equipo multidisciplinario de científicos, ingenieros y estudiantes de la UNAM y centros asociados dedicados a la investigación de frontera en observación de la Tierra y geotecnia."
+               data-en="Multidisciplinary team of scientists, engineers, and students from UNAM and partner institutions dedicated to frontier Earth observation and geotechnical research.">
+                Equipo multidisciplinario de científicos, ingenieros y estudiantes de la UNAM y centros asociados dedicados a la investigación de frontera en observación de la Tierra y geotecnia.
+            </p>
+        </div>
+
+        <!-- 1. ACADÉMICOS -->
+        <div class="team-category-block">
+            <h3 class="team-category-title" data-es="Académicos" data-en="Faculty & Academic Staff">
+                Académicos
+            </h3>
+            <div class="team-academic-grid">
+                
+                <!-- Académico 1: Dr. José Antonio Hernández Espriú -->
+                <div class="academic-card animate-on-scroll">
+                    <div class="academic-img-wrapper">
+                        <img src="img/integrantes/academicos/Dr.%20Jos%C3%A9%20Antonio%20Hern%C3%A1ndez%20Espri%C3%BA.jpg" alt="Dr. José Antonio Hernández Espriú" class="academic-photo">
+                    </div>
+                    <div class="academic-info">
+                        <h4 class="academic-name">Dr. José Antonio Hernández Espriú</h4>
+                        <p class="academic-bio"
+                           data-es="Experto en hidrogeología ambiental, el análisis de pruebas de bombeo en acuíferos, la remediación de suelos contaminados, el hundimiento del terreno (subsidencia) y el nexo agua-energía."
+                           data-en="Expert in environmental hydrogeology, aquifer pumping test analysis, contaminated soil remediation, land subsidence, and the water-energy nexus.">
+                            Experto en hidrogeología ambiental, el análisis de pruebas de bombeo en acuíferos, la remediación de suelos contaminados, el hundimiento del terreno (subsidencia) y el nexo agua-energía.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Académico 2: Dr. Darío Emmanuel Solano Rojas -->
+                <div class="academic-card animate-on-scroll">
+                    <div class="academic-img-wrapper">
+                        <img src="img/integrantes/academicos/Dr.%20Dar%C3%ADo%20Emmanuel%20Solano%20Rojas.jpg" alt="Dr. Darío Emmanuel Solano Rojas" class="academic-photo">
+                    </div>
+                    <div class="academic-info">
+                        <h4 class="academic-name">Dr. Darío Emmanuel Solano Rojas</h4>
+                        <p class="academic-bio"
+                           data-es="Experto en geodesia satelital, percepción remota, ingeniería geológica y geofísica aplicadas a entender las deformaciones en la superficie terrestre, así como riesgos geológicos y monitoreo de infraestructura crítica."
+                           data-en="Expert in satellite geodesy, remote sensing, geological engineering, and geophysics applied to understanding ground surface deformations, geohazards, and critical infrastructure monitoring.">
+                            Experto en geodesia satelital, percepción remota, ingeniería geológica y geofísica aplicadas a entender las deformaciones en la superficie terrestre, así como riesgos geológicos y monitoreo de infraestructura crítica.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Académica: Dra. Maribel Trujillo Valladolid -->
+                <div class="academic-card animate-on-scroll">
+                    <div class="academic-img-wrapper">
+                        <img src="img/integrantes/academicos/Dra.%20Maribel%20Trujillo%20Valladolid.jpg" alt="Dra. Maribel Trujillo Valladolid" class="academic-photo">
+                    </div>
+                    <div class="academic-info">
+                        <h4 class="academic-name">Dra. Maribel Trujillo Valladolid</h4>
+                        <p class="academic-bio"
+                           data-es="Académica e investigadora de la Facultad de Ingeniería de la UNAM, especialista en ingeniería geológica, geotecnia y dinámica de procesos terrestres aplicados a la evaluación y mitigación de riesgos."
+                           data-en="Academic and researcher at the Faculty of Engineering, UNAM, specialized in geological engineering, geotechnics, and terrestrial process dynamics applied to risk assessment and hazard mitigation.">
+                            Académica e investigadora de la Facultad de Ingeniería de la UNAM, especialista en ingeniería geológica, geotecnia y dinámica de procesos terrestres aplicados a la evaluación y mitigación de riesgos.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Académico 3: Ing. Javier Mancera Alejándrez -->
+                <div class="academic-card animate-on-scroll">
+                    <div class="academic-img-wrapper">
+                        <img src="img/integrantes/academicos/Ing.%20Javier%20Mancera%20Alej%C3%A1ndrez.png" alt="Ing. Javier Mancera Alejándrez" class="academic-photo">
+                    </div>
+                    <div class="academic-info">
+                        <h4 class="academic-name">Ing. Javier Mancera Alejandrez</h4>
+                        <p class="academic-bio"
+                           data-es="Ingeniero geólogo, técnico académico de la Facultad de Ingeniería de la UNAM, especializado en mecánica de rocas, ingeniería geotécnica y caracterización geológica mediante drones."
+                           data-en="Geological engineer, academic technician at the Faculty of Engineering, UNAM, specialized in rock mechanics, geotechnical engineering, and drone-based geological characterization.">
+                            Ingeniero geólogo, técnico académico de la Facultad de Ingeniería de la UNAM, especializado en mecánica de rocas, ingeniería geotécnica y caracterización geológica mediante drones.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Académico 4: Lic. Sergio Macías Medrano -->
+                <div class="academic-card animate-on-scroll">
+                    <div class="academic-img-wrapper">
+                        <img src="img/integrantes/academicos/Lic.%20Sergio%20Mac%C3%ADas%20Medrano.png" alt="Lic. Sergio Macías Medrano" class="academic-photo">
+                    </div>
+                    <div class="academic-info">
+                        <h4 class="academic-name">Lic. Sergio Macías Medrano</h4>
+                        <p class="academic-bio"
+                           data-es="Técnico académico de la División de Ingeniería en Ciencias de la Tierra (DICT) en la Facultad de Ingeniería de la UNAM. Su trabajo se enfoca en los Sistemas de Información Geográfica (SIG), la cartografía geomorfológica y la evaluación de vulnerabilidad ambiental e hídrica."
+                           data-en="Academic technician at the Earth Sciences Engineering Division (DICT), Faculty of Engineering, UNAM. His focus includes Geographic Information Systems (GIS), geomorphological mapping, and environmental and water vulnerability assessment.">
+                            Técnico académico de la División de Ingeniería en Ciencias de la Tierra (DICT) en la Facultad de Ingeniería de la UNAM. Su trabajo se enfoca en los Sistemas de Información Geográfica (SIG), la cartografía geomorfológica y la evaluación de vulnerabilidad ambiental e hídrica.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 2. COLABORADORES (AHORA INMEDIATAMENTE DESPUÉS DE ACADÉMICOS) -->
+        <div class="team-category-block">
+            <h3 class="team-category-title" data-es="Colaboradores" data-en="Collaborators & Research Support">
+                Colaboradores
+            </h3>
+            <div class="student-cards-grid">
+                
+                <div class="student-card" style="border-left: 3px solid #CBAB58;">
+                    <div class="student-avatar-img-wrap">
+                        <img src="img/avatars/ingeniera.svg" alt="Ingeniera" class="student-vector-avatar">
+                    </div>
+                    <div class="student-details">
+                        <h4 class="student-name">Ing. Rebeka Gracia Aguilar</h4>
+                        <p class="student-program" data-es="Ingeniera Geofísica · Apoyo a la investigación y gestión de proyectos de monitoreo de infraestructura crítica" data-en="Geophysical Engineer · Research support and critical infrastructure monitoring project management">
+                            Ingeniera Geofísica · Apoyo a la investigación y gestión de proyectos de monitoreo de infraestructura crítica
+                        </p>
+                    </div>
+                </div>
+
+                <div class="student-card" style="border-left: 3px solid #CBAB58;">
+                    <div class="student-avatar-img-wrap">
+                        <img src="img/avatars/ingeniera.svg" alt="Ingeniera" class="student-vector-avatar">
+                    </div>
+                    <div class="student-details">
+                        <h4 class="student-name">Ing. Paulina Miranda García</h4>
+                        <p class="student-program" data-es="Apoyo en el Proyecto de la Presa La Amistad · Estudiante de Maestría en Ciencia e Ingeniería de la Computación — IIMAS" data-en="Research Support on La Amistad Dam Project · Master's Student in Computer Science & Engineering — IIMAS">
+                            Apoyo en el Proyecto de la Presa La Amistad · Estudiante de Maestría en Ciencia e Ingeniería de la Computación — IIMAS
+                        </p>
+                    </div>
+                </div>
+
+                <div class="student-card" style="border-left: 3px solid #CBAB58;">
+                    <div class="student-avatar-img-wrap">
+                        <img src="img/avatars/ingeniera.svg" alt="Ingeniera" class="student-vector-avatar">
+                    </div>
+                    <div class="student-details">
+                        <h4 class="student-name">Ing. Mariana Guzmán Ramírez</h4>
+                        <p class="student-program" data-es="Apoyo en el Proyecto de la Presa La Amistad y Estudiante de Maestría en Ingeniería — Facultad de Ingeniería UNAM" data-en="Research Support on La Amistad Dam Project & Master's Student in Engineering — Faculty of Engineering UNAM">
+                            Apoyo en el Proyecto de la Presa La Amistad y Estudiante de Maestría en Ingeniería — Facultad de Ingeniería UNAM
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 3. TODOS LOS ESTUDIANTES: DOCTORADO, MAESTRÍA Y LICENCIATURA -->
+        <div class="team-category-block">
+            <h3 class="team-category-title" data-es="Estudiantes de Doctorado" data-en="PhD Students">
+                Estudiantes de Doctorado
+            </h3>
+            <div class="student-cards-grid">
+                <div class="student-card">
+                    <div class="student-avatar-img-wrap">
+                        <img src="img/avatars/ingeniero.svg" alt="Ingeniero" class="student-vector-avatar">
+                    </div>
+                    <div class="student-details">
+                        <h4 class="student-name">Arq. Ivan Said Sainz Arellano</h4>
+                        <p class="student-program" data-es="Doctorado en Ciencias de Información Geoespacial — CentroGeo SECIHTI" data-en="PhD in Geospatial Information Sciences — CentroGeo SECIHTI">
+                            Doctorado en Ciencias de Información Geoespacial — CentroGeo SECIHTI
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="team-category-block">
+            <h3 class="team-category-title" data-es="Estudiantes de Maestría" data-en="Master's Students">
+                Estudiantes de Maestría
+            </h3>
+            <div class="student-cards-grid">
+                <div class="student-card">
+                    <div class="student-avatar-img-wrap">
+                        <img src="img/avatars/ingeniero.svg" alt="Ingeniero" class="student-vector-avatar">
+                    </div>
+                    <div class="student-details">
+                        <h4 class="student-name">Ing. Julio Cesar González Balderas</h4>
+                        <p class="student-program" data-es="Maestría en Ciencia e Ingeniería de la Computación — IIMAS" data-en="Master's in Computer Science & Engineering — IIMAS">
+                            Maestría en Ciencia e Ingeniería de la Computación — IIMAS
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="team-category-block" style="margin-bottom:0;">
+            <h3 class="team-category-title" data-es="Estudiantes de Licenciatura" data-en="Undergraduate Students">
+                Estudiantes de LicenciaturaEstudiantes de Licenciatura
+            </h3>
+            <div class="student-cards-grid">
+                <!-- Geología -->
+                <div class="student-card">
+                    <div class="student-avatar-img-wrap">
+                        <img src="img/avatars/ingeniera.svg" alt="Ingeniera" class="student-vector-avatar">
+                    </div>
+                    <div class="student-details">
+                        <h4 class="student-name">Diana López Guadarrama</h4>
+                        <p class="student-program" data-es="Estudiante de Ingeniería Geológica" data-en="Geological Engineering Student">Estudiante de Ingeniería Geológica</p>
+                    </div>
+                </div>
+                <div class="student-card">
+                    <div class="student-avatar-img-wrap">
+                        <img src="img/avatars/ingeniero.svg" alt="Ingeniero" class="student-vector-avatar">
+                    </div>
+                    <div class="student-details">
+                        <h4 class="student-name">Axel Téllez Ramírez</h4>
+                        <p class="student-program" data-es="Estudiante de Ingeniería Geológica" data-en="Geological Engineering Student">Estudiante de Ingeniería Geológica</p>
+                    </div>
+                </div>
+                <div class="student-card">
+                    <div class="student-avatar-img-wrap">
+                        <img src="img/avatars/ingeniera.svg" alt="Ingeniera" class="student-vector-avatar">
+                    </div>
+                    <div class="student-details">
+                        <h4 class="student-name">Daniela Ruiz Garrido</h4>
+                        <p class="student-program" data-es="Estudiante de Ingeniería Geológica" data-en="Geological Engineering Student">Estudiante de Ingeniería Geológica</p>
+                    </div>
+                </div>
+                <div class="student-card">
+                    <div class="student-avatar-img-wrap">
+                        <img src="img/avatars/ingeniero.svg" alt="Ingeniero" class="student-vector-avatar">
+                    </div>
+                    <div class="student-details">
+                        <h4 class="student-name">Alfonso Alvarado Flores</h4>
+                        <p class="student-program" data-es="Estudiante de Ingeniería Geológica" data-en="Geological Engineering Student">Estudiante de Ingeniería Geológica</p>
+                    </div>
+                </div>
+                <div class="student-card">
+                    <div class="student-avatar-img-wrap">
+                        <img src="img/avatars/ingeniero.svg" alt="Ingeniero" class="student-vector-avatar">
+                    </div>
+                    <div class="student-details">
+                        <h4 class="student-name">Eugenio Martínez Cabral</h4>
+                        <p class="student-program" data-es="Estudiante de Ingeniería Geológica" data-en="Geological Engineering Student">Estudiante de Ingeniería Geológica</p>
+                    </div>
+                </div>
+
+                <!-- Computación -->
+                <div class="student-card">
+                    <div class="student-avatar-img-wrap">
+                        <img src="img/avatars/ingeniero.svg" alt="Ingeniero" class="student-vector-avatar">
+                    </div>
+                    <div class="student-details">
+                        <h4 class="student-name">Emiliano</h4>
+                        <p class="student-program" data-es="Estudiante de Ingeniería en Computación" data-en="Computer Engineering Student">Estudiante de Ingeniería en Computación</p>
+                    </div>
+                </div>
+                <div class="student-card">
+                    <div class="student-avatar-img-wrap">
+                        <img src="img/avatars/ingeniero.svg" alt="Ingeniero" class="student-vector-avatar">
+                    </div>
+                    <div class="student-details">
+                        <h4 class="student-name">Zarco</h4>
+                        <p class="student-program" data-es="Estudiante de Ingeniería en Computación" data-en="Computer Engineering Student">Estudiante de Ingeniería en Computación</p>
+                    </div>
+                </div>
+                <div class="student-card">
+                    <div class="student-avatar-img-wrap">
+                        <img src="img/avatars/ingeniero.svg" alt="Ingeniero" class="student-vector-avatar">
+                    </div>
+                    <div class="student-details">
+                        <h4 class="student-name">Fersa</h4>
+                        <p class="student-program" data-es="Estudiante de Ingeniería en Computación" data-en="Computer Engineering Student">Estudiante de Ingeniería en Computación</p>
+                    </div>
+                </div>
+                <div class="student-card">
+                    <div class="student-avatar-img-wrap">
+                        <img src="img/avatars/ingeniera.svg" alt="Ingeniera" class="student-vector-avatar">
+                    </div>
+                    <div class="student-details">
+                        <h4 class="student-name">Sandra</h4>
+                        <p class="student-program" data-es="Estudiante de Ingeniería en Computación" data-en="Computer Engineering Student">Estudiante de Ingeniería en Computación</p>
+                    </div>
+                </div>
+                <div class="student-card">
+                    <div class="student-avatar-img-wrap">
+                        <img src="img/avatars/ingeniero.svg" alt="Ingeniero" class="student-vector-avatar">
+                    </div>
+                    <div class="student-details">
+                        <h4 class="student-name">Falcon</h4>
+                        <p class="student-program" data-es="Estudiante de Ingeniería en Computación" data-en="Computer Engineering Student">Estudiante de Ingeniería en Computación</p>
+                    </div>
+                </div>
+                <div class="student-card">
+                    <div class="student-avatar-img-wrap">
+                        <img src="img/avatars/ingeniera.svg" alt="Ingeniera" class="student-vector-avatar">
+                    </div>
+                    <div class="student-details">
+                        <h4 class="student-name">Cam</h4>
+                        <p class="student-program" data-es="Estudiante de Ingeniería en Computación" data-en="Computer Engineering Student">Estudiante de Ingeniería en Computación</p>
+                    </div>
+                </div>
+                <div class="student-card">
+                    <div class="student-avatar-img-wrap">
+                        <img src="img/avatars/ingeniero.svg" alt="Ingeniero" class="student-vector-avatar">
+                    </div>
+                    <div class="student-details">
+                        <h4 class="student-name">Eduardo</h4>
+                        <p class="student-program" data-es="Estudiante de Ingeniería en Computación" data-en="Computer Engineering Student">Estudiante de Ingeniería en Computación</p>
+                    </div>
+                </div>
+                <div class="student-card">
+                    <div class="student-avatar-img-wrap">
+                        <img src="img/avatars/ingeniero.svg" alt="Ingeniero" class="student-vector-avatar">
+                    </div>
+                    <div class="student-details">
+                        <h4 class="student-name">Luis</h4>
+                        <p class="student-program" data-es="Estudiante de Ingeniería en Computación" data-en="Computer Engineering Student">Estudiante de Ingeniería en Computación</p>
+                    </div>
+                </div>
+                <div class="student-card">
+                    <div class="student-avatar-img-wrap">
+                        <img src="img/avatars/ingeniero.svg" alt="Ingeniero" class="student-vector-avatar">
+                    </div>
+                    <div class="student-details">
+                        <h4 class="student-name">Hector</h4>
+                        <p class="student-program" data-es="Estudiante de Ingeniería en Computación" data-en="Computer Engineering Student">Estudiante de Ingeniería en Computación</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ======================== CONTACTO (Dark) ======================== -->
+<section id="contact">
+    <div class="contact-container">
+        <div class="contact-info">
+            <div class="section-eyebrow" style="margin-bottom:1rem;">
+                <span data-es="Colabora con Nosotros" data-en="Collaborate with Us">Colabora con Nosotros</span>
+            </div>
+            <h2 class="contact-info-title" data-es="Si te interesa colaborar en investigación o vinculación, contáctanos" data-en="If you are interested in collaborating on research or partnerships, contact us">
+                Si te interesa colaborar en investigación o vinculación, contáctanos
+            </h2>
+            <p class="contact-info-desc"
+               data-es="Estamos abiertos a colaboraciones de investigación, proyectos de monitoreo de infraestructura crítica, convenios institucionales y postulaciones para becas."
+               data-en="We welcome research collaborations, critical infrastructure monitoring projects, institutional agreements, and scholarship applications.">
+                Estamos abiertos a colaboraciones de investigación, proyectos de monitoreo de infraestructura crítica, convenios institucionales y postulaciones para becas.
+            </p>
+            <div class="contact-details">
+                <div class="contact-detail">
+                    <div class="contact-detail-icon">📍</div>
+                    <div class="contact-detail-info">
+                        <span class="contact-detail-label" data-es="UBICACIÓN" data-en="LOCATION">UBICACIÓN</span>
+                        <span class="contact-detail-value" data-es="Ciudad Universitaria, México" data-en="University City, Mexico">Ciudad Universitaria, México</span>
+                    </div>
+                </div>
+                <div class="contact-detail">
+                    <div class="contact-detail-icon">📧</div>
+                    <div class="contact-detail-info">
+                        <span class="contact-detail-label">EMAIL</span>
+                        <span class="contact-detail-value">contacto@insar-terralab.mx</span>
+                    </div>
+                </div>
+                <div class="contact-detail">
+                    <div class="contact-detail-icon">💻</div>
+                    <div class="contact-detail-info">
+                        <span class="contact-detail-label">GITHUB</span>
+                        <span class="contact-detail-value">github.com/InSAR-TERRA-Lab</span>
+                    </div>
+                </div>
+                <div class="contact-detail">
+                    <div class="contact-detail-icon">📚</div>
+                    <div class="contact-detail-info">
+                        <span class="contact-detail-label" data-es="PUBLICACIONES" data-en="PUBLICATIONS">PUBLICACIONES</span>
+                        <span class="contact-detail-value">Google Scholar · ORCID · ResearchGate</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <form class="contact-form" id="contact-form" novalidate>
+            <div class="form-row">
+                <div class="form-group">
+                    <label class="form-label" for="f-name" data-es="NOMBRE" data-en="FIRST NAME">NOMBRE</label>
+                    <input id="f-name" type="text" class="form-input"
+                           data-placeholder-es="María" data-placeholder-en="Maria" placeholder="María">
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="f-last" data-es="APELLIDO" data-en="LAST NAME">APELLIDO</label>
+                    <input id="f-last" type="text" class="form-input"
+                           data-placeholder-es="García" data-placeholder-en="García" placeholder="García">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="f-org" data-es="INSTITUCIÓN / EMPRESA" data-en="INSTITUTION / COMPANY">INSTITUCIÓN / EMPRESA</label>
+                <input id="f-org" type="text" class="form-input"
+                       data-placeholder-es="Universidad / Empresa" data-placeholder-en="University / Company" placeholder="Universidad / Empresa">
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="f-email" data-es="CORREO ELECTRÓNICO" data-en="EMAIL ADDRESS">CORREO ELECTRÓNICO</label>
+                <input id="f-email" type="email" class="form-input" placeholder="correo@institucion.edu">
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="f-area" data-es="MOTIVO DE CONTACTO" data-en="PURPOSE OF CONTACT">MOTIVO DE CONTACTO</label>
+                <select id="f-area" class="form-select">
+                    <option value="" data-es="Seleccionar motivo..." data-en="Select purpose...">Seleccionar motivo...</option>
+                    <option value="monitoreo" data-es="Monitoreo de Infraestructura" data-en="Infrastructure Monitoring">Monitoreo de Infraestructura</option>
+                    <option value="beca" data-es="Postulación a Beca / Posgrado" data-en="Scholarship / Graduate Application">Postulación a Beca / Posgrado</option>
+                    <option value="servicio" data-es="Servicio Social / Prácticas" data-en="Social Service / Internship">Servicio Social / Prácticas</option>
+                    <option value="colaboracion" data-es="Colaboración en Investigación" data-en="Research Collaboration">Colaboración en Investigación</option>
+                    <option value="taller" data-es="Talleres y Divulgación" data-en="Workshops & Outreach">Talleres y Divulgación</option>
+                    <option value="otro" data-es="Otro" data-en="Other">Otro</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="f-msg" data-es="MENSAJE" data-en="MESSAGE">MENSAJE</label>
+                <textarea id="f-msg" class="form-textarea"
+                          data-placeholder-es="Cuéntanos sobre tu interés, propuesta o proyecto..."
+                          data-placeholder-en="Tell us about your interest, proposal or project..."
+                          placeholder="Cuéntanos sobre tu interés, propuesta o proyecto..."></textarea>
+            </div>
+            <button class="btn-submit" type="submit" id="submit-btn">
+                <span class="submit-text" data-es="Enviar Mensaje" data-en="Send Message">Enviar Mensaje</span>
+            </button>
+        </form>
+    </div>
+</section>
+
+<!-- ======================== FOOTER ======================== -->
+<footer>
+    <div class="footer-horizontal-container">
+        <!-- Columna 1: Logo Grande + Marca -->
+        <div class="footer-h-brand">
+            <a href="#hero" class="footer-h-logo">
+                <img src="logos/insar-terra-white.png" alt="InSAR-TERRA Lab" class="footer-main-logo">
+            </a>
+            <img src="logos/instituciones/FI_UNAM.png" alt="Facultad de Ingeniería UNAM" class="footer-fi-logo">
+            <p class="footer-h-desc"
+               data-es="Terrestrial Engineering, Remote Sensing, Research & Applications."
+               data-en="Interferometric Radar and Critical Infrastructure Monitoring Laboratory. Faculty of Engineering, UNAM.">
+                Terrestrial Engineering, Remote Sensing, Research & Applications.
+            </p>
+        </div>
+
+        <!-- Columna 2: Enlaces Rápidos en Horizontal -->
+        <div class="footer-h-nav">
+            <div class="footer-h-group">
+                <span class="footer-h-heading" data-es="NAVEGACIÓN" data-en="NAVIGATION">NAVEGACIÓN</span>
+                <div class="footer-h-links">
+                    <a href="#quienes-somos" data-es="Quiénes Somos" data-en="About Us">Quiénes Somos</a>
+                    <a href="servicios.html" data-es="Servicios" data-en="Services">Servicios</a>
+                    <a href="#proyectos" data-es="Proyectos" data-en="Projects">Proyectos</a>
+                    <a href="#difusion" data-es="Publicaciones" data-en="Publications">Publicaciones</a>
+                    <a href="#team" data-es="Equipo" data-en="Team">Equipo</a>
+                    <a href="#contact" data-es="Contacto" data-en="Contact">Contacto</a>
+                </div>
+            </div>
+            <div class="footer-h-group">
+                <span class="footer-h-heading" data-es="CONTACTO & REDES" data-en="CONTACT & SOCIAL">CONTACTO &amp; REDES</span>
+                <div class="footer-h-links">
+                    <a href="#contact">insar.terra.lab@ingenieria.unam.mx</a>
+                    <span class="footer-h-dot">·</span>
+                    <a href="#contact">Ciudad Universitaria, CDMX</a>
+                    <span class="footer-h-dot">·</span>
+                    <a href="#" target="_blank" rel="noopener">GitHub</a>
+                    <span class="footer-h-dot">·</span>
+                    <a href="#" target="_blank" rel="noopener">ResearchGate</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Copyright Compacto -->
+    <div class="footer-h-bottom">
+        <p class="footer-copy"
+           data-es="© 2026 InSAR-TERRA Lab · Facultad de Ingeniería, UNAM. Todos los derechos reservados."
+           data-en="© 2026 InSAR-TERRA Lab · Faculty of Engineering, UNAM. All rights reserved.">
+            © 2026 InSAR-TERRA Lab · Facultad de Ingeniería, UNAM. Todos los derechos reservados.
+        </p>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

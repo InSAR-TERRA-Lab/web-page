@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios Tecnológicos y Especializados | InSAR-TERRA Lab — UNAM</title>
+    <meta name="description" content="Servicios de ingeniería, percepción remota satelital InSAR, drones con LiDAR, geofísica aplicada y supercómputo para monitoreo de infraestructura crítica y amenazas geológicas.">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='14' fill='%23060F1C'/><path d='M8 16a8 8 0 0 1 16 0' stroke='%23CBAB58' stroke-width='3' fill='none'/><circle cx='16' cy='16' r='3' fill='%23CBAB58'/></svg>">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .services-page-hero {
+            padding: 130px 2rem 4rem;
+            background: linear-gradient(180deg, #060F1C 0%, #0E1726 100%);
+            border-bottom: 1px solid rgba(203, 171, 88, 0.25);
+            text-align: center;
+        }
+        .services-hero-content {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+        .services-badge {
+            display: inline-block;
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: #CBAB58;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: rgba(203, 171, 88, 0.12);
+            padding: 0.4rem 1.2rem;
+            border-radius: 999px;
+            border: 1px solid rgba(203, 171, 88, 0.3);
+        }
+        .services-hero-title {
+            font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+            font-weight: 900;
+            color: #FFFFFF;
+            line-height: 1.15;
+            margin-bottom: 1.25rem;
+        }
+        .services-hero-subtitle {
+            font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.65;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .services-section-wrapper {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+        .service-card-detailed {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 3.5rem;
+            align-items: center;
+            background: #FFFFFF;
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 4rem;
+            box-shadow: 0 16px 40px -10px rgba(10, 22, 40, 0.12);
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service-card-detailed:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 24px 50px -12px rgba(10, 22, 40, 0.18);
+        }
+        .service-card-detailed.reverse {
+            grid-template-columns: 1fr 1.1fr;
+        }
+        .service-card-detailed.reverse .service-info {
+            order: 2;
+        }
+        .service-card-detailed.reverse .service-img-wrap {
+            order: 1;
+        }
+        .service-tag {
+            display: inline-block;
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            color: #8C6D23;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+        .service-title {
+            font-size: clamp(1.6rem, 2.4vw, 2.2rem);
+            font-weight: 800;
+            color: #0E1726;
+            line-height: 1.25;
+            margin-bottom: 1rem;
+        }
+        .service-desc {
+            font-size: 1.02rem;
+            color: #4A5568;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+        .service-features-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 2rem 0;
+        }
+        .service-features-list li {
+            position: relative;
+            padding-left: 1.6rem;
+            font-size: 0.95rem;
+            color: #2D3748;
+            line-height: 1.6;
+            margin-bottom: 0.6rem;
+        }
+        .service-features-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #CBAB58;
+            font-weight: 900;
+        }
+        .service-img-wrap {
+            height: 380px;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+        }
+        .service-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .services-cta-banner {
+            background: #060F1C;
+            border-radius: 24px;
+            padding: 4rem 2.5rem;
+            text-align: center;
+            color: #FFFFFF;
+            border: 1px solid rgba(203, 171, 88, 0.3);
+            margin-top: 2rem;
+        }
+        .services-cta-banner h3 {
+            font-size: clamp(2rem, 3.2vw, 2.6rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+        .services-cta-banner p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 650px;
+            margin: 0 auto 2rem auto;
+            line-height: 1.6;
+        }
+        @media (max-width: 900px) {
+            .service-card-detailed,
+            .service-card-detailed.reverse {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 2rem 1.5rem;
+            }
+            .service-card-detailed.reverse .service-info {
+                order: 1;
+            }
+            .service-card-detailed.reverse .service-img-wrap {
+                order: 2;
+            }
+            .service-img-wrap {
+                height: 260px;
+            }
+        }
+    </style>
+</head>
+<body style="background: #F8FAFC;">
+
+<!-- ======================== HEADER ======================== -->
+<header id="main-header" style="background:#060F1C;">
+    <a href="index.html#hero" class="logo">
+        <img src="logos/insar-terra-white.png" alt="InSAR-TERRA Lab" class="header-main-logo">
+    </a>
+
+    <nav id="main-nav">
+        <a href="index.html#quienes-somos" data-es="Quiénes Somos" data-en="About Us">Quiénes Somos</a>
+        <div class="nav-item-dropdown">
+            <a href="servicios.html" class="nav-link-dropdown active" data-es="Servicios ▾" data-en="Services ▾">Servicios ▾</a>
+            <div class="dropdown-menu">
+                <a href="#insar-interferometria" data-es="Interferometría Radar Satelital (InSAR)" data-en="Satellite Radar Interferometry (InSAR)">Interferometría Radar Satelital (InSAR)</a>
+                <a href="#drones-lidar" data-es="Fotogrametría con Drones y Escáner LiDAR" data-en="Drone Photogrammetry & LiDAR Scanning">Fotogrametría con Drones y Escáner LiDAR</a>
+                <a href="#geofisica-gpr" data-es="Geofísica Aplicada (GPR y Tomografía Eléctrica)" data-en="Applied Geophysics (GPR & Electrical Tomography)">Geofísica Aplicada (GPR y Tomografía Eléctrica)</a>
+                <a href="#infraestructura-critica" data-es="Monitoreo de Infraestructura Crítica y Presas" data-en="Critical Infrastructure & Dam Monitoring">Monitoreo de Infraestructura Crítica y Presas</a>
+                <a href="#supercomputo-analitica" data-es="Supercómputo y Analítica Geoespacial Masiva" data-en="Supercomputing & Big Geospatial Analytics">Supercómputo y Analítica Geoespacial Masiva</a>
+            </div>
+        </div>
+        <a href="index.html#proyectos" data-es="Proyectos" data-en="Projects">Proyectos</a>
+        <a href="index.html#difusion" data-es="Publicaciones Recientes" data-en="Recent Publications">Publicaciones Recientes</a>
+        <a href="index.html#team" data-es="Equipo" data-en="Team">Equipo</a>
+        <a href="index.html#contact" data-es="Contacto" data-en="Contact">Contacto</a>
+    </nav>
+
+    <div class="header-actions">
+        <div class="lang-toggle" role="group" aria-label="Seleccionar idioma">
+            <button class="lang-btn active" id="btn-es" onclick="setLang('es')" aria-pressed="true">ES</button>
+            <button class="lang-btn" id="btn-en" onclick="setLang('en')" aria-pressed="false">EN</button>
+        </div>
+        <a href="index.html#contact" class="btn-contact" data-es="Contacto" data-en="Contact Us">Contacto</a>
+    </div>
+</header>
+
+<!-- ======================== SERVICES HERO ======================== -->
+<section class="services-page-hero">
+    <div class="services-hero-content">
+        <span class="services-badge" data-es="Capacidades Tecnológicas & Soluciones" data-en="Technological Capabilities & Solutions">Capacidades Tecnológicas &amp; Soluciones</span>
+        <h1 class="services-hero-title" data-es="Servicios Especializados de Ingeniería y Analítica Geoespacial" data-en="Specialized Engineering & Geospatial Analytics Services">
+            Servicios Especializados de Ingeniería y Analítica Geoespacial
+        </h1>
+        <p class="services-hero-subtitle" data-es="Soluciones científicas y tecnológicas integradas desde la Facultad de Ingeniería de la UNAM. Combinamos sensores satelitales, aerotransportados y geofísica con supercómputo para diagnósticos de alta exactitud en superficie y subsuelo." data-en="Integrated scientific and technological solutions from the Faculty of Engineering at UNAM. We fuse satellite, airborne, and geophysical sensors with high-performance supercomputing for high-precision surface and subsurface diagnostics.">
+            Soluciones científicas y tecnológicas integradas desde la Facultad de Ingeniería de la UNAM. Combinamos sensores satelitales, aerotransportados y geofísica con supercómputo para diagnósticos de alta exactitud en superficie y subsuelo.
+        </p>
+    </div>
+</section>
+
+<!-- ======================== SERVICES LIST ======================== -->
+<main class="services-section-wrapper">
+
+    <!-- Servicio 1: InSAR -->
+    <article id="insar-interferometria" class="service-card-detailed">
+        <div class="service-info">
+            <span class="service-tag" data-es="01 // PERCEPCIÓN REMOTA SATELITAL" data-en="01 // SATELLITE REMOTE SENSING">01 // PERCEPCIÓN REMOTA SATELITAL</span>
+            <h2 class="service-title" data-es="Interferometría Radar Satelital (InSAR)" data-en="Satellite Radar Interferometry (InSAR)">
+                Interferometría Radar Satelital (InSAR)
+            </h2>
+            <p class="service-desc" data-es="Medición continua y retrospectiva de deformaciones milimétricas en la corteza terrestre, obras de ingeniería y zonas urbanas mediante algoritmos avanzados de PS-InSAR (Persistent Scatterers) y SBAS (Small Baseline Subset) empleando constelaciones satelitales Sentinel-1, TerraSAR-X, PAZ y COSMO-SkyMed." data-en="Continuous and retrospective measurement of millimetric ground deformation across terrain, engineering assets, and urban zones using advanced PS-InSAR and SBAS algorithms across Sentinel-1, TerraSAR-X, PAZ, and COSMO-SkyMed radar constellations.">
+                Medición continua y retrospectiva de deformaciones milimétricas en la corteza terrestre, obras de ingeniería y zonas urbanas mediante algoritmos avanzados de PS-InSAR (Persistent Scatterers) y SBAS (Small Baseline Subset) empleando constelaciones satelitales Sentinel-1, TerraSAR-X, PAZ y COSMO-SkyMed.
+            </p>
+            <ul class="service-features-list">
+                <li data-es="Detección de subsidencia, hundimientos diferenciales y agrietamiento geológico." data-en="Detection of urban subsidence, differential settlement, and ground fissures.">Detección de subsidencia, hundimientos diferenciales y agrietamiento geológico.</li>
+                <li data-es="Monitoreo de estabilidad en laderas montañosas, taludes y cortes carreteros." data-en="Slope stability tracking across mountainous slopes, open pits, and highway cuts.">Monitoreo de estabilidad en laderas montañosas, taludes y cortes carreteros.</li>
+                <li data-es="Reconstrucción de series temporales históricas multianuales sin instrumentación en campo." data-en="Multi-year historical time-series reconstruction without prior in-situ sensors.">Reconstrucción de series temporales históricas multianuales sin instrumentación en campo.</li>
+            </ul>
+            <a href="index.html#contact" class="btn-primary" data-es="Solicitar Asesoría InSAR" data-en="Request InSAR Advisory">Solicitar Asesoría InSAR →</a>
+        </div>
+        <div class="service-img-wrap">
+            <img src="assets/nature_metro_insar.webp" alt="InSAR Deformation Mapping">
+        </div>
+    </article>
+
+    <!-- Servicio 2: Drones & LiDAR -->
+    <article id="drones-lidar" class="service-card-detailed reverse">
+        <div class="service-info">
+            <span class="service-tag" data-es="02 // SENSORES AEROTRANSPORTADOS" data-en="02 // AIRBORNE SENSORS">02 // SENSORES AEROTRANSPORTADOS</span>
+            <h2 class="service-title" data-es="Fotogrametría con Drones y Escáner LiDAR" data-en="Drone Photogrammetry & LiDAR Scanning">
+                Fotogrametría con Drones y Escáner LiDAR
+            </h2>
+            <p class="service-desc" data-es="Levantamientos topográficos tridimensionales de ultra-alta resolución espacial con nubes de puntos de millones de registros por segundo. Empleamos drones industriales con posicionamiento cinemático en tiempo real (RTK/PPK) y escáneres LiDAR terrestres y aéreos capaces de penetrar la vegetación densa." data-en="Ultra-high-resolution 3D topographic surveying generating point clouds of millions of points per second. We deploy industrial UAVs with RTK/PPK positioning alongside terrestrial and airborne LiDAR scanners capable of penetrating dense canopy.">
+                Levantamientos topográficos tridimensionales de ultra-alta resolución espacial con nubes de puntos de millones de registros por segundo. Empleamos drones industriales con posicionamiento cinemático en tiempo real (RTK/PPK) y escáneres LiDAR terrestres y aéreos capaces de penetrar la vegetación densa.
+            </p>
+            <ul class="service-features-list">
+                <li data-es="Modelos Digitales de Elevación (DEM) y Terreno (DTM) centimétricos." data-en="Centimetric Digital Elevation Models (DEM) and Digital Terrain Models (DTM).">Modelos Digitales de Elevación (DEM) y Terreno (DTM) centimétricos.</li>
+                <li data-es="Gemelos digitales y modelos 3D de alta fidelidad para obras de infraestructura." data-en="Digital twins and high-fidelity 3D assets for engineering infrastructure.">Gemelos digitales y modelos 3D de alta fidelidad para obras de infraestructura.</li>
+                <li data-es="Cálculo volumétrico de bancos de material, terraplenes y movimiento de tierras." data-en="Volumetric analysis for open-pit stockpiles, embankments, and earthworks.">Cálculo volumétrico de bancos de material, terraplenes y movimiento de tierras.</li>
+            </ul>
+            <a href="index.html#contact" class="btn-primary" data-es="Solicitar Levantamiento LiDAR" data-en="Request LiDAR Survey">Solicitar Levantamiento LiDAR →</a>
+        </div>
+        <div class="service-img-wrap">
+            <img src="img/img3.jpeg" alt="Drone and LiDAR Scanning">
+        </div>
+    </article>
+
+    <!-- Servicio 3: Geofísica Aplicada -->
+    <article id="geofisica-gpr" class="service-card-detailed">
+        <div class="service-info">
+            <span class="service-tag" data-es="03 // AUSCULTACIÓN DEL SUBSUELO" data-en="03 // SUBSURFACE INVESTIGATION">03 // AUSCULTACIÓN DEL SUBSUELO</span>
+            <h2 class="service-title" data-es="Geofísica Aplicada (GPR y Tomografía Eléctrica)" data-en="Applied Geophysics (GPR & Electrical Tomography)">
+                Geofísica Aplicada (GPR y Tomografía Eléctrica)
+            </h2>
+            <p class="service-desc" data-es="Auscultación geofísica no destructiva para caracterizar el subsuelo somero e intermedio. La combinación de Georradar (GPR) de alta frecuencia con tomografía de resistividad eléctrica (ERT) permite mapear cavidades, fracturas activas, niveles freáticos y anomalías geotécnicas antes de que representen una contingencia." data-en="Non-destructive geophysical subsurface exploration for shallow and intermediate strata. Fusing high-frequency Ground Penetrating Radar (GPR) with Electrical Resistivity Tomography (ERT) reveals sinkholes, active faults, water tables, and geotechnical anomalies before failures occur.">
+                Auscultación geofísica no destructiva para caracterizar el subsuelo somero e intermedio. La combinación de Georradar (GPR) de alta frecuencia con tomografía de resistividad eléctrica (ERT) permite mapear cavidades, fracturas activas, niveles freáticos y anomalías geotécnicas antes de que representen una contingencia.
+            </p>
+            <ul class="service-features-list">
+                <li data-es="Localización de oquedades, cavernas kársticas y socavones urbanos." data-en="Localization of subterranean voids, karst caves, and urban sinkholes.">Localización de oquedades, cavernas kársticas y socavones urbanos.</li>
+                <li data-es="Mapeo de tuberías, ductos y servicios enterrados en zonas industriales y urbanas." data-en="Underground utility, pipeline, and conduit mapping in urbanized corridors.">Mapeo de tuberías, ductos y servicios enterrados en zonas industriales y urbanas.</li>
+                <li data-es="Estratigrafía eléctrica para cimentaciones y estudios de filtración en bordos." data-en="Electrical stratigraphy for foundations, dams, and seepage diagnostics.">Estratigrafía eléctrica para cimentaciones y estudios de filtración en bordos.</li>
+            </ul>
+            <a href="index.html#contact" class="btn-primary" data-es="Solicitar Estudio Geofísico" data-en="Request Geophysics Study">Solicitar Estudio Geofísico →</a>
+        </div>
+        <div class="service-img-wrap">
+            <img src="img/img2.jpeg" alt="Applied Geophysics GPR and ERT">
+        </div>
+    </article>
+
+    <!-- Servicio 4: Infraestructura Crítica -->
+    <article id="infraestructura-critica" class="service-card-detailed reverse">
+        <div class="service-info">
+            <span class="service-tag" data-es="04 // SEGURIDAD ESTRUCTURAL E HIDRÁULICA" data-en="04 // STRUCTURAL & DAM SAFETY">04 // SEGURIDAD ESTRUCTURAL E HIDRÁULICA</span>
+            <h2 class="service-title" data-es="Monitoreo de Infraestructura Crítica y Presas" data-en="Critical Infrastructure & Dam Monitoring">
+                Monitoreo de Infraestructura Crítica y Presas
+            </h2>
+            <p class="service-desc" data-es="Programas integrales de auscultación geomecánica e hidráulica para presas de almacenamiento y relaves, sistemas de transporte masivo (Metro, trenes interurbanos), puentes, refinerías y viaductos. Correlacionamos variaciones hidrometeorológicas con desplazamientos mecánicos para emitir alertas tempranas de riesgo." data-en="Comprehensive geomechanical and hydraulic health monitoring programs for dams, tailing facilities, mass transit networks, bridges, refineries, and viaducts. We cross-correlate hydrometeorological forcing with mechanical displacements to deliver proactive early-warning insights.">
+                Programas integrales de auscultación geomecánica e hidráulica para presas de almacenamiento y relaves, sistemas de transporte masivo (Metro, trenes interurbanos), puentes, refinerías y viaductos. Correlacionamos variaciones hidrometeorológicas con desplazamientos mecánicos para emitir alertas tempranas de riesgo.
+            </p>
+            <ul class="service-features-list">
+                <li data-es="Vigilancia cinemática de cortinas, estribos y vasos de almacenamiento." data-en="Kinematic surveillance of dam crests, abutments, and retention basins.">Vigilancia cinemática de cortinas, estribos y vasos de almacenamiento.</li>
+                <li data-es="Inspección de vías férreas, túneles y viaductos elevados en zonas de subsidencia." data-en="Inspection of rail alignments, tunnels, and elevated viaducts over sinking ground.">Inspección de vías férreas, túneles y viaductos elevados en zonas de subsidencia.</li>
+                <li data-es="Auditoría estructural de patrimonio histórico y monumentos culturales." data-en="Structural stability auditing for historic heritage and colonial monuments.">Auditoría estructural de patrimonio histórico y monumentos culturales.</li>
+            </ul>
+            <a href="index.html#contact" class="btn-primary" data-es="Monitorear Infraestructura" data-en="Monitor Infrastructure">Monitorear Infraestructura →</a>
+        </div>
+        <div class="service-img-wrap">
+            <img src="assets/piahs_f01.png" alt="Dam and Structural Health Monitoring">
+        </div>
+    </article>
+
+    <!-- Servicio 5: Supercómputo -->
+    <article id="supercomputo-analitica" class="service-card-detailed">
+        <div class="service-info">
+            <span class="service-tag" data-es="05 // BIG DATA & SUPERCOMPUTING" data-en="05 // BIG DATA & SUPERCOMPUTING">05 // BIG DATA & SUPERCOMPUTING</span>
+            <h2 class="service-title" data-es="Supercómputo y Analítica Geoespacial Masiva" data-en="Supercomputing & Big Geospatial Analytics">
+                Supercómputo y Analítica Geoespacial Masiva
+            </h2>
+            <p class="service-desc" data-es="Procesamiento masivo de petabytes de datos de observación de la Tierra mediante algoritmos paralelos en entornos HPC (High Performance Computing). Desarrollamos visores geográficos interactivos, modelos de aprendizaje automático y pipelines automatizados para monitoreo continuo a escala de cuencas completas y zonas metropolitanas." data-en="Massive processing of petabytes of Earth observation data powered by parallel algorithms on High Performance Computing (HPC) clusters. We build interactive WebGIS geoportals, machine learning models, and automated continuous processing pipelines at watershed and metropolitan scales.">
+                Procesamiento masivo de petabytes de datos de observación de la Tierra mediante algoritmos paralelos en entornos HPC (High Performance Computing). Desarrollamos visores geográficos interactivos, modelos de aprendizaje automático y pipelines automatizados para monitoreo continuo a escala de cuencas completas y zonas metropolitanas.
+            </p>
+            <ul class="service-features-list">
+                <li data-es="Procesamiento InSAR masivo y pipelines automatizados de monitoreo continuo." data-en="Massive InSAR processing and automated continuous monitoring pipelines.">Procesamiento InSAR masivo y pipelines automatizados de monitoreo continuo.</li>
+                <li data-es="Desarrollo de geoportales e interfaces web GIS para toma de decisiones." data-en="WebGIS dashboard and interactive geoportal development for stakeholders.">Desarrollo de geoportales e interfaces web GIS para toma de decisiones.</li>
+                <li data-es="Modelado predictivo de amenazas geológicas y climáticas con Machine Learning." data-en="Predictive modeling of geohazards and climate risks with Machine Learning.">Modelado predictivo de amenazas geológicas y climáticas con Machine Learning.</li>
+            </ul>
+            <a href="index.html#contact" class="btn-primary" data-es="Consultar Soluciones HPC" data-en="Inquire HPC Solutions">Consultar Soluciones HPC →</a>
+        </div>
+        <div class="service-img-wrap">
+            <img src="assets/nature_2020_fig2.png" alt="Supercomputing and Big Geospatial Analytics">
+        </div>
+    </article>
+
+    <!-- Banner CTA final -->
+    <div class="services-cta-banner">
+        <h3 data-es="¿Tiene un proyecto o desafío de ingeniería que resolver?" data-en="Have an engineering project or challenge to solve?">
+            ¿Tiene un proyecto o desafío de ingeniería que resolver?
+        </h3>
+        <p data-es="Póngase en contacto con nuestro equipo de investigadores y especialistas de la UNAM para estructurar una propuesta técnica adaptada a sus requerimientos." data-en="Connect with our UNAM research team and technical specialists to design a tailor-made scientific and engineering solution.">
+            Póngase en contacto con nuestro equipo de investigadores y especialistas de la UNAM para estructurar una propuesta técnica adaptada a sus requerimientos.
+        </p>
+        <a href="index.html#contact" class="btn-primary" style="font-size:1.05rem; padding:1rem 2.2rem;" data-es="Contactar al Laboratorio" data-en="Contact the Laboratory">Contactar al Laboratorio →</a>
+    </div>
+
+</main>
+
+<!-- ======================== FOOTER ======================== -->
+<footer style="background:#060F1C; margin-top:5rem;">
+    <div class="footer-top">
+        <div class="footer-brand">
+            <a href="index.html#hero" class="footer-logo">
+                <img src="logos/insar-terra-white.png" alt="InSAR-TERRA Lab" style="height:36px; width:auto;">
+            </a>
+            <p class="footer-brand-desc"
+               data-es="Terrestrial Engineering, Remote Sensing, Research & Applications."
+               data-en="Interferometric Radar and Critical Infrastructure Monitoring Laboratory. Faculty of Engineering, UNAM.">
+                Terrestrial Engineering, Remote Sensing, Research & Applications.
+            </p>
+        </div>
+        <div class="footer-col">
+            <h4 class="footer-col-title" data-es="Navegación" data-en="Navigation">Navegación</h4>
+            <ul class="footer-links">
+                <li><a href="index.html#quienes-somos" data-es="Quiénes Somos" data-en="About Us">Quiénes Somos</a></li>
+                <li><a href="servicios.html" data-es="Servicios" data-en="Services">Servicios</a></li>
+                <li><a href="index.html#proyectos" data-es="Proyectos" data-en="Projects">Proyectos</a></li>
+                <li><a href="index.html#difusion" data-es="Publicaciones" data-en="Publications">Publicaciones</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4 class="footer-col-title" data-es="Contacto" data-en="Contact">Contacto</h4>
+            <ul class="footer-links">
+                <li><a href="index.html#contact">insar.terra.lab@ingenieria.unam.mx</a></li>
+                <li><a href="index.html#contact">Ciudad Universitaria, CDMX</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p class="footer-copy">© 2026 InSAR-TERRA Lab · UNAM. <span data-es="Todos los derechos reservados." data-en="All rights reserved.">Todos los derechos reservados.</span></p>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
