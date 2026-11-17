@@ -5318,3 +5318,139 @@ button.paper-item[aria-expanded="true"] .paper-action-text { opacity: 1 !importa
   background: var(--clr-teal) !important;
   color: var(--clr-obsidian) !important;
 }
+
+/* ==========================================================================
+   COORDINADOR ACADÉMICO — TARJETA ESPECIAL (Nov 2026)
+   ========================================================================== */
+
+/* Badge de rol encima del nombre */
+.academic-role-badge {
+  display: inline-block;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #CBAB58;
+  background: rgba(203,171,88,0.12);
+  border: 1px solid rgba(203,171,88,0.35);
+  border-radius: 4px;
+  padding: 0.2rem 0.65rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Tarjeta del director con acento dorado a la izquierda */
+.academic-card--director {
+  border-left: 4px solid #CBAB58 !important;
+  background: rgba(203,171,88,0.04) !important;
+}
+
+/* Fotos reales en avatar circular de colaboradoras */
+.student-avatar-img-wrap img[style*="object-fit:cover"] {
+  object-fit: cover !important;
+  border-radius: 50% !important;
+}
+
+/* ==========================================================================
+   ESTUDIANTES ALINEADOS CON ACADÉMICOS (Nov 2026)
+   ========================================================================== */
+
+/* Mismo contenedor y márgenes laterales que los bloques académicos */
+.team-category-block {
+  max-width: 100% !important;
+}
+
+/* Grid de estudiantes: 3 columnas en escritorio, alineadas con académicos */
+.student-cards-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 1.2rem !important;
+  width: 100% !important;
+}
+
+/* Tarjeta de estudiante — misma altura mínima y padding consistente */
+.student-card {
+  min-height: 72px !important;
+  align-items: center !important;
+  padding: 1rem 1.2rem !important;
+}
+
+/* Avatar redondo más visible */
+.student-avatar-img-wrap {
+  width: 48px !important;
+  height: 48px !important;
+  flex-shrink: 0 !important;
+}
+
+/* Responsive: 2 columnas en tablet */
+@media (max-width: 1024px) {
+  .student-cards-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* Responsive: 1 columna en móvil */
+@media (max-width: 600px) {
+  .student-cards-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ==========================================================================
+   FRANJA DE LOGOS EN EL LANDING (FI, DICT, InSAR-TERRA) (Nov 2026)
+   ========================================================================== */
+.hero-logos-franja {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 2.2rem !important;
+  background: rgba(255, 255, 255, 0.94) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  padding: 0.75rem 1.75rem !important;
+  border-radius: 12px !important;
+  margin-top: 1rem !important;
+  margin-bottom: 2.2rem !important;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35) !important;
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+  width: fit-content !important;
+  max-width: 100% !important;
+}
+
+.hero-logos-franja .hero-fi-logo {
+  height: 90px !important;
+  max-height: 95px !important;
+  width: auto !important;
+  object-fit: contain !important;
+}
+
+.hero-logos-franja .hero-inst-logo {
+  height: 75px !important;
+  max-height: 80px !important;
+  width: auto !important;
+  object-fit: contain !important;
+}
+
+.hero-logos-franja .hero-insar-logo {
+  height: 75px !important;
+  max-height: 80px !important;
+  width: auto !important;
+  object-fit: contain !important;
+  border-radius: 6px !important;
+}
+
+@media (max-width: 768px) {
+  .hero-logos-franja {
+    gap: 1.2rem !important;
+    padding: 0.6rem 1rem !important;
+    margin-bottom: 1.8rem !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+  }
+  .hero-logos-franja .hero-fi-logo {
+    height: 58px !important;
+  }
+  .hero-logos-franja .hero-inst-logo,
+  .hero-logos-franja .hero-insar-logo {
+    height: 50px !important;
+  }
+}
