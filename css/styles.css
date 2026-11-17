@@ -5454,3 +5454,63 @@ button.paper-item[aria-expanded="true"] .paper-action-text { opacity: 1 !importa
     height: 50px !important;
   }
 }
+
+/* ==========================================================================
+   AUMENTAR TAMAÑO DE LOGOS EN HEADER Y FOOTER (Nov 2026)
+   ========================================================================== */
+
+/* Altura del Header adecuada para logos más grandes */
+#main-header,
+header {
+  min-height: 95px !important;
+  height: auto !important;
+  padding: 0.5rem 2rem !important;
+}
+
+/* Logos en el Header */
+.header-main-logo {
+  height: 88px !important;
+  max-height: 94px !important;
+  width: auto !important;
+}
+
+.header-fi-logo {
+  height: 82px !important;
+  max-height: 88px !important;
+  width: auto !important;
+}
+
+/* Logos en el Footer */
+.footer-main-logo {
+  height: 85px !important;
+  max-height: 92px !important;
+  width: auto !important;
+}
+
+.footer-fi-logo {
+  height: 80px !important;
+  max-height: 85px !important;
+  width: auto !important;
+}
+
+@media (max-width: 860px) {
+  #main-header,
+  header {
+    min-height: 78px !important;
+    padding: 0.4rem 1rem !important;
+  }
+  .header-main-logo {
+    height: 56px !important;
+    max-height: 60px !important;
+  }
+  .header-fi-logo {
+    height: 54px !important;
+    max-height: 58px !important;
+  }
+  .footer-main-logo {
+    height: 65px !important;
+  }
+  .footer-fi-logo {
+    height: 60px !important;
+  }
+}
